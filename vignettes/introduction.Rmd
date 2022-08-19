@@ -38,3 +38,58 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
+
+
+## Introduction
+
+This document introduces the `TaxNorm` R package, a package for normalizing microbiome taxa data. Here, we will go through how to install, analyze and visualize microbiome data using this package. `TaxNorm` implements the Zero Inflated Negative Binomial (ZINB) method to normalize microbiome data. 
+
+## What is the ZINB method?
+
+
+## Outline
+
+There are three main steps in using this package: 
+
+- **Loading Analysis Ready Data**: In the package we have an example data set from the phyloeq package that shows shows the format needed for analysis. These data can be generated using methods blah blah blah. 
+
+- **Running ZINB Normalization Function**: The `TaxNorm_Normalization` function is runn using the above data on the input. This function impliments the ZINB method for normalization.
+
+- **Visualizing and Quality Control**: Last, visualization and quality control measures are built into the package for use. 
+
+
+## Installation
+
+### Required Packages 
+
+`TaxNorm` requires the packages `phyloeq` and `microbiome` which can be found on bioconductor. 
+
+### Installation from Bioconductor
+
+### Installation from Github
+
+For the newest, but potentially unstable, version of the package, direct github installation is also supported.
+
+```{r, eval = FALSE}
+remotes::install_github("wangziyue57/TaxNorm")
+```
+
+### Loading Package into R Environment 
+
+```{r, eval = FALSE}
+library(TaxNorm)
+```
+
+
+
+## Example Usage
+
+
+
+
+
+
+
+
+
+
