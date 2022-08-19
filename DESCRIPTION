@@ -8,6 +8,9 @@ Authors@R: c(
       person("Alison", "Motsinger-Reif", email = "alison.motsinger-reif@nih.gov", role = c("aut","ctb")))
 Maintainer: Ziyue Wang <wangziyue57@gmail.com>
 Description: A novel feature-wise normalization method based on zero-inflated negative binomial model. This method assumes that the effects of sequencing depth vary for each taxon on their mean and also incorporates a rational link of zero probability and taxon dispersion as a function of sequencing depth.
+Imports:
+	phyloseq
+	microbiome
 License: GPL-3
 Depends: R (>= 4.0.3)
 Imports: phyloseq, microbiome
