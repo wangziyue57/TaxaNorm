@@ -10,7 +10,7 @@ Maintainer: Ziyue Wang <wangziyue57@gmail.com>
 Description: A novel feature-wise normalization method based on zero-inflated negative binomial model. This method assumes that the effects of sequencing depth vary for each taxon on their mean and also incorporates a rational link of zero probability and taxon dispersion as a function of sequencing depth.
 License: GPL-3
 Depends: R (>= 4.0.3)
-Imports: phyloseq, microbiome
+Imports: phyloseq, microbiome, S4Vectors
 URL: https://github.com/wangziyue57/TaxNorm
 biocViews: Sequencing, Microbiome, Metagenomics, Normalization, Visualization
 Encoding: UTF-8
