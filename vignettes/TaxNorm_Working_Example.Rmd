@@ -5,9 +5,24 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(TaxNorm)
+library(phyloseq)
+library(microbiome)
 ```
 
 ```{r}
+data("TaxNorm_Example_Input", package = "TaxNorm")
 
+```
+
+```{r}
+group <- sample_data(TaxNorm_Example_Input)$body_site
+HMP_norm <- TaxNorm_GetCounts(data = TaxNorm_Example_Input, 
+                     depth = NULL,
+                     group = group, 
+                     filter.sample.num = 1,
+                     filter.taxa.count = 0,
+                     random = TRUE,
+                     ncores = 1)
 ```
 
