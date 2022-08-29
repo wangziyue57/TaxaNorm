@@ -1,7 +1,7 @@
 ##----------------------------------------------------------------------------##
 ## methods-TaxNorm_Results
 ##----------------------------------------------------------------------------##
-
+#' @importFrom S4Vectors setValidity2 new2
 #' @name TaxNorm_Results-class
 #' @title TaxNorm Results
 #' @description S4 class to store TaxNorm Results

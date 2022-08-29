@@ -16,8 +16,22 @@ data("TaxNorm_Example_Input", package = "TaxNorm")
 ```
 
 ```{r}
+
+coeff <- c(10,10)
+mus <- c(10,10)
+thetas <- c(10,10)
+pis <- c(10,10)
+
+TaxNorm_Model_Parameters(coefficients = coeff,
+                         mu = mus,
+                         theta = thetas,
+                         pi = pis)
+```
+
+
+```{r}
 group <- sample_data(TaxNorm_Example_Input)$body_site
-HMP_norm <- TaxNorm_GetCounts(data = TaxNorm_Example_Input, 
+HMP_norm <- TaxNorm_Normalization(data = TaxNorm_Example_Input, 
                      depth = NULL,
                      group = group, 
                      filter.sample.num = 1,
