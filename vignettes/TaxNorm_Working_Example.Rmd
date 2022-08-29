@@ -15,26 +15,7 @@ data("TaxNorm_Example_Input", package = "TaxNorm")
 
 ```
 
-```{r}
 
-coeff <- c(10,10)
-mus <- c(10,10)
-thetas <- c(10,10)
-pis <- c(10,10)
-
-model_params <- TaxNorm_Model_Parameters(coefficients = coeff,
-                         mu = mus,
-                         theta = thetas,
-                         pi = pis)
-
-
-res <- TaxNorm_Results(rawdata = mtcars,
-                normdata = mtcars,
-                ecdf = mtcars,
-                model_pars = model_params,
-                converge = c(TRUE,TRUE,FALSE))
-
-```
 
 
 ```{r}
