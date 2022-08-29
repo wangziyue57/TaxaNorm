@@ -30,7 +30,3 @@ HMP_norm <- TaxNorm_Normalization(data = TaxNorm_Example_Input,
 ```
 
 
-```{r}
-counts_df <- as.data.frame(HMP_norm[[3]])
-```
-
