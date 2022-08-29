@@ -98,11 +98,29 @@ TaxNorm_Normalization <- function(data,
   normdata <- do.call("rbind", lapply(normdata_list, function(x) x$count_norm))
   colnames(normdata) <- colnames(count_toUse)
 
-  return(list(rawdata = count_toUse,
-              normdata = normdata, ecdf = ecdf,
-              model_pars = list(coefficients = coefficients,
-                                mu = mu, theta = theta, pi = pi),
-              converge = converge))
+
+  counts_df <- as.data.frame(count_toUse)
+  normdata_df <- as.data.frame(normdata)
+  ecdf_df <- as.data.frame(ecdf)
+
+  model_parameters <- TaxNorm_Model_Parameters(coefficients = coefficients,
+                                               mu = mu, theta = theta, pi = pi)
+
+  myresults <- TaxNorm_Results(rawdata = counts_df,
+                               normdata = normdata_df,
+                               ecdf = ecdf_df,
+                               model_pars = model_parameters,
+                               converge = converge)
+
+  return(myresults)
+
+  # return(list(rawdata = counts_df,
+  #             normdata = normdata_df, ecdf = ecdf_df,
+  #             model_pars = list(coefficients = coefficients,
+  #                               mu = mu, theta = theta, pi = pi),
+  #             test_model_pars <- model_parameters,
+  #             converge = converge))
+
 }
 
 ## function to fit ZINB regression

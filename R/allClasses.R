@@ -15,10 +15,10 @@ NULL
 #' @exportClass TaxNorm_Model_Parameters
 
 setClass("TaxNorm_Model_Parameters",
-         slots = c(coefficients = "numeric",
-                   mu = "numeric",
-                   theta = "numeric",
-                   pi ="numeric"))
+         slots = c(coefficients = "matrix",
+                   mu = "matrix",
+                   theta = "matrix",
+                   pi ="matrix"))
 
 setClassUnion("TaxNorm_Model_Parameters_OR_NULL", members = c("TaxNorm_Model_Parameters", "NULL"))
 

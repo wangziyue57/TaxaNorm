@@ -22,10 +22,18 @@ mus <- c(10,10)
 thetas <- c(10,10)
 pis <- c(10,10)
 
-TaxNorm_Model_Parameters(coefficients = coeff,
+model_params <- TaxNorm_Model_Parameters(coefficients = coeff,
                          mu = mus,
                          theta = thetas,
                          pi = pis)
+
+
+res <- TaxNorm_Results(rawdata = mtcars,
+                normdata = mtcars,
+                ecdf = mtcars,
+                model_pars = model_params,
+                converge = c(TRUE,TRUE,FALSE))
+
 ```
 
 
@@ -38,5 +46,10 @@ HMP_norm <- TaxNorm_Normalization(data = TaxNorm_Example_Input,
                      filter.taxa.count = 0,
                      random = TRUE,
                      ncores = 1)
+```
+
+
+```{r}
+counts_df <- as.data.frame(HMP_norm[[3]])
 ```
 

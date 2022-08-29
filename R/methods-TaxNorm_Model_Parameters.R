@@ -6,10 +6,10 @@
 #' @title TaxNorm_Model_Parameters
 #' @description S4 class to store TaxNorm Parameters
 #'
-#' @slot coefficients `vector(<numeric>)` coefficients
-#' @slot mu `vector(<numeric>)` mu
-#' @slot theta `vector(<numeric>)` theta
-#' @slot pi `vector(<numeric>)` pi
+#' @slot coefficients `matrix` coefficients
+#' @slot mu `matrix` mu
+#' @slot theta `matrix` theta
+#' @slot pi `matrix` pi
 #'
 #' @param coefficients Passed to `coefficients` slot
 #' @param mu Passed to `mu` slot
