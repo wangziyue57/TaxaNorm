@@ -40,3 +40,23 @@ TaxNorm_Results <- function(rawdata, normdata, ecdf, model_pars,converge) {
 }
 
 ##----------------------------------------------------------------------------##
+## accessors
+
+#' @describeIn TaxNorm_Results-class Return `rawdata` slot
+#' @aliases TaxNorm_Results-rawdata
+#' @export
+
+setMethod("rawdata", "TaxNorm_Results", function(x) {
+  x@rawdata
+})
+
+#' @rdname TaxNorm_Results-class
+#' @export
+setReplaceMethod("rawdata", "TaxNorm_Results", function(x,value) {
+  x@rawdata <- value
+  validObject(x)
+  x
+})
+
+
+##----------------------------------------------------------------------------##

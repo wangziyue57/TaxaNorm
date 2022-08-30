@@ -4,9 +4,16 @@
 \name{TaxNorm_Results-class}
 \alias{TaxNorm_Results-class}
 \alias{TaxNorm_Results}
+\alias{rawdata,TaxNorm_Results-method}
+\alias{TaxNorm_Results-rawdata}
+\alias{rawdata<-,TaxNorm_Results-method}
 \title{TaxNorm Results}
 \usage{
 TaxNorm_Results(rawdata, normdata, ecdf, model_pars, converge)
+
+\S4method{rawdata}{TaxNorm_Results}(x)
+
+\S4method{rawdata}{TaxNorm_Results}(x) <- value
 }
 \arguments{
 \item{rawdata}{Passed to \code{rawdata} slot}
@@ -25,6 +32,11 @@ S4 class to store TaxNorm Results
 \details{
 All results from the TaxNorm method and what was used to get those results
 }
+\section{Functions}{
+\itemize{
+\item \code{rawdata,TaxNorm_Results-method}: Return \code{rawdata} slot
+}}
+
 \section{Slots}{
 
 \describe{

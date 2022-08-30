@@ -27,12 +27,12 @@ Parameters for TaxNorm Method
 \section{Slots}{
 
 \describe{
-\item{\code{coefficients}}{\verb{vector(<numeric>)} coefficients}
+\item{\code{coefficients}}{\code{matrix} coefficients}
 
-\item{\code{mu}}{\verb{vector(<numeric>)} mu}
+\item{\code{mu}}{\code{matrix} mu}
 
-\item{\code{theta}}{\verb{vector(<numeric>)} theta}
+\item{\code{theta}}{\code{matrix} theta}
 
-\item{\code{pi}}{\verb{vector(<numeric>)} pi}
+\item{\code{pi}}{\code{matrix} pi}
 }}
 
