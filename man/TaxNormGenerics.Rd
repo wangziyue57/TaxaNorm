@@ -4,11 +4,59 @@
 \alias{TaxNormGenerics}
 \alias{rawdata}
 \alias{rawdata<-}
+\alias{normdata}
+\alias{normdata<-}
+\alias{ecdf}
+\alias{ecdf<-}
+\alias{model_pars}
+\alias{model_pars<-}
+\alias{converge}
+\alias{converge<-}
+\alias{coefficients}
+\alias{coefficients<-}
+\alias{mu}
+\alias{mu<-}
+\alias{theta}
+\alias{theta<-}
+\alias{pi}
+\alias{pi<-}
 \title{TaxNorm package generics}
 \usage{
 rawdata(x, ...)
 
 rawdata(x, ...) <- value
+
+normdata(x, ...)
+
+normdata(x, ...) <- value
+
+ecdf(x, ...)
+
+ecdf(x, ...) <- value
+
+model_pars(x, ...)
+
+model_pars(x, ...) <- value
+
+converge(x, ...)
+
+converge(x, ...) <- value
+
+coefficients(x, ...)
+
+coefficients(x, ...) <- value
+
+mu(x, ...)
+
+mu(x, ...) <- value
+
+theta(x, ...)
+
+theta(x, ...) <- value
+
+pi(x, ...)
+
+pi(x, ...) <- value
 }
 \arguments{
 \item{x}{TaxNorm S4 object}

@@ -5,9 +5,37 @@
 \name{TaxNorm_Model_Parameters-class}
 \alias{TaxNorm_Model_Parameters-class}
 \alias{TaxNorm_Model_Parameters}
+\alias{coefficients,TaxNorm_Model_Parameters-method}
+\alias{TaxNorm_Model_Parameters-coefficients}
+\alias{coefficients<-,TaxNorm_Model_Parameters-method}
+\alias{mu,TaxNorm_Model_Parameters-method}
+\alias{TaxNorm_Model_Parameters-mu}
+\alias{mu<-,TaxNorm_Model_Parameters-method}
+\alias{theta,TaxNorm_Model_Parameters-method}
+\alias{TaxNorm_Model_Parameters-theta}
+\alias{theta<-,TaxNorm_Model_Parameters-method}
+\alias{pi,TaxNorm_Model_Parameters-method}
+\alias{TaxNorm_Model_Parameters-pi}
+\alias{pi<-,TaxNorm_Model_Parameters-method}
 \title{TaxNorm_Model_Parameters}
 \usage{
 TaxNorm_Model_Parameters(coefficients, mu, theta, pi)
+
+\S4method{coefficients}{TaxNorm_Model_Parameters}(x)
+
+\S4method{coefficients}{TaxNorm_Model_Parameters}(x) <- value
+
+\S4method{mu}{TaxNorm_Model_Parameters}(x)
+
+\S4method{mu}{TaxNorm_Model_Parameters}(x) <- value
+
+\S4method{theta}{TaxNorm_Model_Parameters}(x)
+
+\S4method{theta}{TaxNorm_Model_Parameters}(x) <- value
+
+\S4method{pi}{TaxNorm_Model_Parameters}(x)
+
+\S4method{pi}{TaxNorm_Model_Parameters}(x) <- value
 }
 \arguments{
 \item{coefficients}{Passed to \code{coefficients} slot}
@@ -24,6 +52,17 @@ S4 class to store TaxNorm Parameters
 \details{
 Parameters for TaxNorm Method
 }
+\section{Functions}{
+\itemize{
+\item \code{coefficients,TaxNorm_Model_Parameters-method}: Return \code{coefficients} slot
+
+\item \code{mu,TaxNorm_Model_Parameters-method}: Return \code{mu} slot
+
+\item \code{theta,TaxNorm_Model_Parameters-method}: Return \code{theta} slot
+
+\item \code{pi,TaxNorm_Model_Parameters-method}: Return \code{pi} slot
+}}
+
 \section{Slots}{
 
 \describe{

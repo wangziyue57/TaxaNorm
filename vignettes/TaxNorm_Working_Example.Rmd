@@ -27,6 +27,12 @@ HMP_norm <- TaxNorm_Normalization(data = TaxNorm_Example_Input,
                      filter.taxa.count = 0,
                      random = TRUE,
                      ncores = 1)
+
+
 ```
 
+
+```{r}
+data("TaxNorm_Example_Output", package = "TaxNorm")
+```
 

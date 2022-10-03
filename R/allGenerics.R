@@ -5,7 +5,7 @@
 
 #' @name TaxNormGenerics
 #' @title TaxNorm package generics
-#' @description TaxNorm package generics; see class man pages for associated 
+#' @description TaxNorm package generics; see class man pages for associated
 #' methods
 #' @param x TaxNorm S4 object
 #' @param value Replacement value
@@ -17,6 +17,59 @@ NULL
 setGeneric("rawdata", function(x, ...) standardGeneric("rawdata"))
 
 #' @rdname TaxNormGenerics
-setGeneric("rawdata<-", 
+setGeneric("rawdata<-",
            function(x, ..., value) standardGeneric("rawdata<-"))
 
+#' @rdname TaxNormGenerics
+setGeneric("normdata", function(x, ...) standardGeneric("normdata"))
+
+#' @rdname TaxNormGenerics
+setGeneric("normdata<-",
+           function(x, ..., value) standardGeneric("normdata<-"))
+#' @rdname TaxNormGenerics
+setGeneric("ecdf", function(x, ...) standardGeneric("ecdf"))
+
+#' @rdname TaxNormGenerics
+setGeneric("ecdf<-",
+           function(x, ..., value) standardGeneric("ecdf<-"))
+#' @rdname TaxNormGenerics
+setGeneric("model_pars", function(x, ...) standardGeneric("model_pars"))
+
+#' @rdname TaxNormGenerics
+setGeneric("model_pars<-",
+           function(x, ..., value) standardGeneric("model_pars<-"))
+#' @rdname TaxNormGenerics
+setGeneric("converge", function(x, ...) standardGeneric("converge"))
+
+#' @rdname TaxNormGenerics
+setGeneric("converge<-",
+           function(x, ..., value) standardGeneric("converge<-"))
+
+#' @rdname TaxNormGenerics
+setGeneric("coefficients", function(x, ...) standardGeneric("coefficients"))
+
+#' @rdname TaxNormGenerics
+setGeneric("coefficients<-",
+           function(x, ..., value) standardGeneric("coefficients<-"))
+
+
+#' @rdname TaxNormGenerics
+setGeneric("mu", function(x, ...) standardGeneric("mu"))
+
+#' @rdname TaxNormGenerics
+setGeneric("mu<-",
+           function(x, ..., value) standardGeneric("mu<-"))
+
+#' @rdname TaxNormGenerics
+setGeneric("theta", function(x, ...) standardGeneric("theta"))
+
+#' @rdname TaxNormGenerics
+setGeneric("theta<-",
+           function(x, ..., value) standardGeneric("theta<-"))
+
+#' @rdname TaxNormGenerics
+setGeneric("pi", function(x, ...) standardGeneric("pi"))
+
+#' @rdname TaxNormGenerics
+setGeneric("pi<-",
+           function(x, ..., value) standardGeneric("pi<-"))

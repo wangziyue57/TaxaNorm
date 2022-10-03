@@ -58,5 +58,68 @@ setReplaceMethod("rawdata", "TaxNorm_Results", function(x,value) {
   x
 })
 
+#' @describeIn TaxNorm_Results-class Return `normdata` slot
+#' @aliases TaxNorm_Results-normdata
+#' @export
 
+setMethod("normdata", "TaxNorm_Results", function(x) {
+  x@normdata
+})
+
+#' @rdname TaxNorm_Results-class
+#' @export
+setReplaceMethod("normdata", "TaxNorm_Results", function(x,value) {
+  x@normdata <- value
+  validObject(x)
+  x
+})
+
+#' @describeIn TaxNorm_Results-class Return `ecdf` slot
+#' @aliases TaxNorm_Results-ecdf
+#' @export
+
+setMethod("ecdf", "TaxNorm_Results", function(x) {
+  x@ecdf
+})
+
+#' @rdname TaxNorm_Results-class
+#' @export
+setReplaceMethod("ecdf", "TaxNorm_Results", function(x,value) {
+  x@ecdf <- value
+  validObject(x)
+  x
+})
+
+#' @describeIn TaxNorm_Results-class Return `model_pars` slot
+#' @aliases TaxNorm_Results-model_pars
+#' @export
+
+setMethod("model_pars", "TaxNorm_Results", function(x) {
+  x@model_pars
+})
+
+#' @rdname TaxNorm_Results-class
+#' @export
+setReplaceMethod("model_pars", "TaxNorm_Results", function(x,value) {
+  x@model_pars <- value
+  validObject(x)
+  x
+})
+
+
+#' @describeIn TaxNorm_Results-class Return `converge` slot
+#' @aliases TaxNorm_Results-converge
+#' @export
+
+setMethod("converge", "TaxNorm_Results", function(x) {
+  x@converge
+})
+
+#' @rdname TaxNorm_Results-class
+#' @export
+setReplaceMethod("converge", "TaxNorm_Results", function(x,value) {
+  x@converge <- value
+  validObject(x)
+  x
+})
 ##----------------------------------------------------------------------------##

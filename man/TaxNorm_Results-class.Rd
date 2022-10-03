@@ -7,6 +7,18 @@
 \alias{rawdata,TaxNorm_Results-method}
 \alias{TaxNorm_Results-rawdata}
 \alias{rawdata<-,TaxNorm_Results-method}
+\alias{normdata,TaxNorm_Results-method}
+\alias{TaxNorm_Results-normdata}
+\alias{normdata<-,TaxNorm_Results-method}
+\alias{ecdf,TaxNorm_Results-method}
+\alias{TaxNorm_Results-ecdf}
+\alias{ecdf<-,TaxNorm_Results-method}
+\alias{model_pars,TaxNorm_Results-method}
+\alias{TaxNorm_Results-model_pars}
+\alias{model_pars<-,TaxNorm_Results-method}
+\alias{converge,TaxNorm_Results-method}
+\alias{TaxNorm_Results-converge}
+\alias{converge<-,TaxNorm_Results-method}
 \title{TaxNorm Results}
 \usage{
 TaxNorm_Results(rawdata, normdata, ecdf, model_pars, converge)
@@ -14,6 +26,22 @@ TaxNorm_Results(rawdata, normdata, ecdf, model_pars, converge)
 \S4method{rawdata}{TaxNorm_Results}(x)
 
 \S4method{rawdata}{TaxNorm_Results}(x) <- value
+
+\S4method{normdata}{TaxNorm_Results}(x)
+
+\S4method{normdata}{TaxNorm_Results}(x) <- value
+
+\S4method{ecdf}{TaxNorm_Results}(x)
+
+\S4method{ecdf}{TaxNorm_Results}(x) <- value
+
+\S4method{model_pars}{TaxNorm_Results}(x)
+
+\S4method{model_pars}{TaxNorm_Results}(x) <- value
+
+\S4method{converge}{TaxNorm_Results}(x)
+
+\S4method{converge}{TaxNorm_Results}(x) <- value
 }
 \arguments{
 \item{rawdata}{Passed to \code{rawdata} slot}
@@ -35,6 +63,14 @@ All results from the TaxNorm method and what was used to get those results
 \section{Functions}{
 \itemize{
 \item \code{rawdata,TaxNorm_Results-method}: Return \code{rawdata} slot
+
+\item \code{normdata,TaxNorm_Results-method}: Return \code{normdata} slot
+
+\item \code{ecdf,TaxNorm_Results-method}: Return \code{ecdf} slot
+
+\item \code{model_pars,TaxNorm_Results-method}: Return \code{model_pars} slot
+
+\item \code{converge,TaxNorm_Results-method}: Return \code{converge} slot
 }}
 
 \section{Slots}{
