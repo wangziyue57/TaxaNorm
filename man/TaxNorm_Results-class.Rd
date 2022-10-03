@@ -4,6 +4,9 @@
 \name{TaxNorm_Results-class}
 \alias{TaxNorm_Results-class}
 \alias{TaxNorm_Results}
+\alias{input_data,TaxNorm_Results-method}
+\alias{TaxNorm_Results-input_data}
+\alias{input_data<-,TaxNorm_Results-method}
 \alias{rawdata,TaxNorm_Results-method}
 \alias{TaxNorm_Results-rawdata}
 \alias{rawdata<-,TaxNorm_Results-method}
@@ -21,7 +24,11 @@
 \alias{converge<-,TaxNorm_Results-method}
 \title{TaxNorm Results}
 \usage{
-TaxNorm_Results(rawdata, normdata, ecdf, model_pars, converge)
+TaxNorm_Results(input_data, rawdata, normdata, ecdf, model_pars, converge)
+
+\S4method{input_data}{TaxNorm_Results}(x)
+
+\S4method{input_data}{TaxNorm_Results}(x) <- value
 
 \S4method{rawdata}{TaxNorm_Results}(x)
 
@@ -44,6 +51,8 @@ TaxNorm_Results(rawdata, normdata, ecdf, model_pars, converge)
 \S4method{converge}{TaxNorm_Results}(x) <- value
 }
 \arguments{
+\item{input_data}{passed to \code{input_data} slot}
+
 \item{rawdata}{Passed to \code{rawdata} slot}
 
 \item{normdata}{Passed to \code{normdata} slot}
@@ -62,6 +71,8 @@ All results from the TaxNorm method and what was used to get those results
 }
 \section{Functions}{
 \itemize{
+\item \code{input_data,TaxNorm_Results-method}: Return \code{input_data} slot
+
 \item \code{rawdata,TaxNorm_Results-method}: Return \code{rawdata} slot
 
 \item \code{normdata,TaxNorm_Results-method}: Return \code{normdata} slot
@@ -76,6 +87,8 @@ All results from the TaxNorm method and what was used to get those results
 \section{Slots}{
 
 \describe{
+\item{\code{input_data}}{\code{ANY} phyloseq input data}
+
 \item{\code{rawdata}}{\code{data.frame} Data frame of counts to use}
 
 \item{\code{normdata}}{\code{data.frame} Normalized Data}

@@ -31,7 +31,8 @@ setClassUnion("TaxNorm_Model_Parameters_OR_NULL", members = c("TaxNorm_Model_Par
 #' @exportClass TaxNorm_Results
 
 setClass("TaxNorm_Results",
-         slots = c(rawdata = "data.frame",
+         slots = c(input_data = "ANY",
+                   rawdata = "data.frame",
                    normdata = "data.frame",
                    ecdf = "data.frame",
                    model_pars ="TaxNorm_Model_Parameters",

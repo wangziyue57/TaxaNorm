@@ -16,6 +16,9 @@ TaxNorm_Model_QC <- function(TaxNorm_Results){
 
   mymodelpars <- model_pars(TaxNorm_Example_Output)
 
+  mycoefs <- coefficients(mymodelpars)
+
+  hist(mycoefs[,2])
 
 
 }

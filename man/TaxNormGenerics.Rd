@@ -2,6 +2,8 @@
 % Please edit documentation in R/allGenerics.R
 \name{TaxNormGenerics}
 \alias{TaxNormGenerics}
+\alias{input_data}
+\alias{input_data<-}
 \alias{rawdata}
 \alias{rawdata<-}
 \alias{normdata}
@@ -22,6 +24,10 @@
 \alias{pi<-}
 \title{TaxNorm package generics}
 \usage{
+input_data(x, ...)
+
+input_data(x, ...) <- value
+
 rawdata(x, ...)
 
 rawdata(x, ...) <- value

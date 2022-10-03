@@ -106,7 +106,10 @@ TaxNorm_Normalization <- function(data,
   model_parameters <- TaxNorm_Model_Parameters(coefficients = coefficients,
                                                mu = mu, theta = theta, pi = pi)
 
-  myresults <- TaxNorm_Results(rawdata = counts_df,
+  myinput <- data
+
+  myresults <- TaxNorm_Results(input_data = myinput,
+                               rawdata = counts_df,
                                normdata = normdata_df,
                                ecdf = ecdf_df,
                                model_pars = model_parameters,

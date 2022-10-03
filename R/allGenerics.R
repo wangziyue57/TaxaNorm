@@ -14,6 +14,14 @@
 NULL
 
 #' @rdname TaxNormGenerics
+setGeneric("input_data", function(x, ...) standardGeneric("input_data"))
+
+#' @rdname TaxNormGenerics
+setGeneric("input_data<-",
+           function(x, ..., value) standardGeneric("input_data<-"))
+
+
+#' @rdname TaxNormGenerics
 setGeneric("rawdata", function(x, ...) standardGeneric("rawdata"))
 
 #' @rdname TaxNormGenerics
