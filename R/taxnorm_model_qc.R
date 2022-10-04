@@ -1,8 +1,6 @@
 #' Function to QC TaxNorm algorithm
 #' @name TaxNorm_Model_QC
-#' @param data (Required) Input data; should be either a phyloseq object or a count matrix
-#' @param group condition variables if samples are from multiple groups; should be correpsond to the column of the count data. default is NULL, where no grouping is considered
-#' @param filter.sample.num,filter.taxa.count taxa with "filter.taxa.count" in more than "filter.sample.num" samples will be removed before testing. default is keep taxa appear in at least 10 samples within each group
+#' @param TaxNormResults (Required) Input data; should be either a phyloseq object or a count matrix
 #'
 #' @return a list containing qc taxnorm object
 #'
@@ -12,13 +10,125 @@
 #' @export
 
 
-TaxNorm_Model_QC <- function(TaxNorm_Results){
+TaxNorm_Model_QC <- function(TaxNormResults){
 
-  mymodelpars <- model_pars(TaxNorm_Example_Output)
+  mymodelpars <- model_pars(TaxNormResults)
 
   mycoefs <- coefficients(mymodelpars)
 
-  hist(mycoefs[,2])
+  myinput_data <- input_data(TaxNormResults)
 
+  mytab <- table(tax_table(myinput_data)[, "Phylum"], exclude = NULL)
+
+  myphy <- names(mytab)[-length(mytab)]
+
+  coef_depth <- list()
+
+  for(i in 1:(length(mytab)-1)){
+
+    coef_depth[[i]] <- mycoefs[taxa_names(subset_taxa(myinput_data, Phylum==myphy[i])),2]
+
+  }
+
+  names(coef_depth) <- myphy
+
+
+
+
+  plotdata <- data.frame(matrix(ncol = 2,nrow = 0))
+  names(plotdata) <- c("Phylum","Phy")
+  for(i in seq_along(coef_depth)){
+
+    curr_data <- coef_depth[i]
+
+    curr_data <- as.data.frame(curr_data)
+
+    curr_data$Phy <- myphy[i]
+
+    names(curr_data) <- c("Value","Phylum")
+
+    plotdata <- rbind(plotdata,curr_data)
+
+
+  }
+
+  mean_coef_plot <- ggplot(plotdata, aes(x=Value, color=Phylum)) +
+    geom_density() +
+    scale_color_brewer(palette = "Dark2") +
+    labs(x = "Slope for Sequencing Depth") +
+    theme_classic()
+
+  coef_zero <- list()
+
+  for(i in 1:(length(mytab)-1)){
+
+    coef_zero[[i]] <- mycoefs[taxa_names(subset_taxa(myinput_data, Phylum==myphy[i])),8]
+
+  }
+
+  names(coef_zero) <- myphy
+
+
+
+
+  plotdata <- data.frame(matrix(ncol = 2,nrow = 0))
+  names(plotdata) <- c("Phylum","Phy")
+  for(i in seq_along(coef_zero)){
+
+    curr_data <- coef_zero[i]
+
+    curr_data <- as.data.frame(curr_data)
+
+    curr_data$Phy <- myphy[i]
+
+    names(curr_data) <- c("Value","Phylum")
+
+    plotdata <- rbind(plotdata,curr_data)
+
+
+  }
+
+  zero_coef_plot <- ggplot(plotdata, aes(x=Value, color=Phylum)) +
+    geom_density() +
+    scale_color_brewer(palette = "Dark2") +
+    labs(x = "Slope for Sequencing Depth") +
+    theme_classic()
+
+
+  coef_disb <- list()
+
+  for(i in 1:(length(mytab)-1)){
+
+    coef_disb[[i]] <- mycoefs[taxa_names(subset_taxa(myinput_data, Phylum==myphy[i])),10]
+
+  }
+
+  names(coef_disb) <- myphy
+
+  plotdata <- data.frame(matrix(ncol = 2,nrow = 0))
+  names(plotdata) <- c("Phylum","Phy")
+  for(i in seq_along(coef_disb)){
+
+    curr_data <- coef_disb[i]
+
+    curr_data <- as.data.frame(curr_data)
+
+    curr_data$Phy <- myphy[i]
+
+    names(curr_data) <- c("Value","Phylum")
+
+    plotdata <- rbind(plotdata,curr_data)
+
+
+  }
+
+  disb_coef_plot <- ggplot(plotdata, aes(x=Value, color=Phylum)) +
+    geom_density() +
+    scale_color_brewer(palette = "Dark2") +
+    labs(x = "Slope for Sequencing Depth") +
+    theme_classic()
+
+
+return(list(mean_coef_plot,zero_coef_plot,disb_coef_plot))
 
 }
