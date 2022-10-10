@@ -13,14 +13,14 @@
 
 TaxNorm_QC_Input <- function(data){
 
-  depth = sample_sums(data)
+  depth <- sample_sums(data)
 
-  countdata = abundances(data)
-  mean_all = rowMeans(countdata)
-  zero_all = rowSums(otu_table(data)==0)
-  var_all = matrixStats::rowVars(countdata) # taxa varaince
+  countdata <- abundances(data)
+  mean_all <- rowMeans(countdata)
+  zero_all <- rowSums(otu_table(data)==0)
+  var_all <- matrixStats::rowVars(countdata) # taxa varaince
 
-  data_summary = data.frame(mean = mean_all, var = var_all, zero = zero_all)
+  data_summary <- data.frame(mean = mean_all, var = var_all, zero = zero_all)
   # inspect mean-variance relationship
   # fit a local regression line (loess)
   # parameter: span=1 can be changed. larger value will give less overfitted line
@@ -30,7 +30,9 @@ TaxNorm_QC_Input <- function(data){
     scale_x_continuous(trans = 'log10') +
     scale_y_continuous(trans = 'log10') +
     geom_abline(intercept = 0, slope = 1, linetype = 1, size = 0.5,
-                color = "gray60")
+                color = "gray60") +
+    ggtitle("Mean Variance Relationship") +
+    theme_classic()
 
   # inspect mean-zero relationship
   ggplot(data_summary, aes(mean, zero)) +
@@ -39,8 +41,10 @@ TaxNorm_QC_Input <- function(data){
     scale_x_continuous(trans = 'log10') +
     scale_y_continuous(trans = 'log10') +
     geom_abline(intercept = 0, slope = 1, linetype = 1, size = 0.5,
-                color = "gray60")
+                color = "gray60") +
+    ggtitle("Mean Zero Relationship") +
+    theme_classic()
 
-
+  return(data_summary)
 
 }
