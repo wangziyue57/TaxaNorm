@@ -4,14 +4,10 @@
 \alias{TaxNorm_Model_QC}
 \title{Function to QC TaxNorm algorithm}
 \usage{
-TaxNorm_Model_QC(TaxNorm_Results)
+TaxNorm_Model_QC(TaxNormResults)
 }
 \arguments{
-\item{data}{(Required) Input data; should be either a phyloseq object or a count matrix}
-
-\item{group}{condition variables if samples are from multiple groups; should be correpsond to the column of the count data. default is NULL, where no grouping is considered}
-
-\item{filter.sample.num, filter.taxa.count}{taxa with "filter.taxa.count" in more than "filter.sample.num" samples will be removed before testing. default is keep taxa appear in at least 10 samples within each group}
+\item{TaxNormResults}{(Required) Input data; should be either a phyloseq object or a count matrix}
 }
 \value{
 a list containing qc taxnorm object

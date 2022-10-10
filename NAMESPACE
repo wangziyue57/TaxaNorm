@@ -2,7 +2,9 @@
 
 export(TaxNorm_Model_Parameters)
 export(TaxNorm_Model_QC)
+export(TaxNorm_NMDS)
 export(TaxNorm_Normalization)
+export(TaxNorm_QC_Input)
 export(TaxNorm_Results)
 exportClasses(TaxNorm_Model_Parameters)
 exportClasses(TaxNorm_Results)

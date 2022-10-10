@@ -20,13 +20,19 @@ TaxNorm_Model_QC <- function(TaxNormResults){
 
   mytab <- table(tax_table(myinput_data)[, "Phylum"], exclude = NULL)
 
+  mytaxa <- as.data.frame(tax_table(myinput_data)[, "Phylum"])
+
   myphy <- names(mytab)[-length(mytab)]
+
+
+  mycoefs <- cbind(mycoefs,mytaxa)
 
   coef_depth <- list()
 
+
   for(i in 1:(length(mytab)-1)){
 
-    coef_depth[[i]] <- mycoefs[taxa_names(subset_taxa(myinput_data, Phylum==myphy[i])),2]
+    coef_depth[[i]] <- mycoefs[which(mycoefs$Phylum == myphy[i]),2]
 
   }
 
@@ -58,11 +64,14 @@ TaxNorm_Model_QC <- function(TaxNormResults){
     labs(x = "Slope for Sequencing Depth") +
     theme_classic()
 
+
+
+
   coef_zero <- list()
 
   for(i in 1:(length(mytab)-1)){
 
-    coef_zero[[i]] <- mycoefs[taxa_names(subset_taxa(myinput_data, Phylum==myphy[i])),8]
+    coef_zero[[i]] <- mycoefs[which(mycoefs$Phylum == myphy[i]),8]
 
   }
 
@@ -99,7 +108,7 @@ TaxNorm_Model_QC <- function(TaxNormResults){
 
   for(i in 1:(length(mytab)-1)){
 
-    coef_disb[[i]] <- mycoefs[taxa_names(subset_taxa(myinput_data, Phylum==myphy[i])),10]
+    coef_disb[[i]] <- mycoefs[which(mycoefs$Phylum == myphy[i]),10]
 
   }
 

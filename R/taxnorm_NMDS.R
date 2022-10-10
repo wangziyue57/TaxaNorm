@@ -9,7 +9,7 @@
 #'
 #' @export
 
-TaxNorm_NMDS <- function(TaxNormResults,group){
+TaxNorm_NMDS <- function(TaxNormResults,group_column){
 
   mynorm <- normdata(TaxNormResults)
 
@@ -23,8 +23,8 @@ TaxNorm_NMDS <- function(TaxNormResults,group){
   norm_NMDS <- data.frame(fit$points, sample_data(mydata))
 
  p <- ggplot(norm_NMDS) +
-    geom_point(aes_string('MDS1', 'MDS2', color = group)) +
-    stat_ellipse(aes_string('MDS1', 'MDS2', color = group)) +
+    geom_point(aes_string('MDS1', 'MDS2', color = group_column)) +
+    stat_ellipse(aes_string('MDS1', 'MDS2', color = group_column)) +
     theme_classic()
 
   return(p)

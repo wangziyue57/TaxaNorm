@@ -24,7 +24,7 @@ TaxNorm_QC_Input <- function(data){
   # inspect mean-variance relationship
   # fit a local regression line (loess)
   # parameter: span=1 can be changed. larger value will give less overfitted line
-  ggplot(data_summary, aes(mean, var)) +
+  p <- ggplot(data_summary, aes(mean, var)) +
     geom_point() +
     geom_smooth(method = "loess", span = 1, method.args = list(degree=2), color = "red") +
     scale_x_continuous(trans = 'log10') +
@@ -34,8 +34,10 @@ TaxNorm_QC_Input <- function(data){
     ggtitle("Mean Variance Relationship") +
     theme_classic()
 
+  print(p)
+
   # inspect mean-zero relationship
-  ggplot(data_summary, aes(mean, zero)) +
+  g <- ggplot(data_summary, aes(mean, zero)) +
     geom_point() +
     geom_smooth(method = "loess", span = 1, method.args = list(degree=1), color = "red") +
     scale_x_continuous(trans = 'log10') +
@@ -44,6 +46,7 @@ TaxNorm_QC_Input <- function(data){
                 color = "gray60") +
     ggtitle("Mean Zero Relationship") +
     theme_classic()
+print(g)
 
   return(data_summary)
 

@@ -30,7 +30,6 @@ HMP_norm <- TaxNorm_Normalization(data = TaxNorm_Example_Input,
 
 
 TaxNorm_Example_Output <- HMP_norm
-#save(TaxNorm_Example_Output, file = "C:\\Users\\Dillon\\OneDrive\\Documents\\GitHub\\TaxNorm\\data/TaxNorm_Example_Output.rda")
 ```
 
 
