@@ -16,17 +16,13 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Ziyue Wang \email{wangziyue57@gmail.com}
+\strong{Maintainer}: Dillon Lloyd \email{dtlloyd@ncsu.edu}
 
 Authors:
 \itemize{
+  \item Ziyue Wang \email{wangziyue57@gmail.com}
   \item Shanshan Zhao \email{shanshan.zhao@nih.gov} [contributor]
   \item Alison Motsinger-Reif \email{alison.motsinger-reif@nih.gov} [contributor]
-}
-
-Other contributors:
-\itemize{
-  \item Dillon Lloyd \email{dtlloyd@ncsu.edu} [contributor]
 }
 
 }
