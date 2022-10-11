@@ -10,12 +10,8 @@ TaxNorm_QC_Input(data)
 \item{data}{(Required) Input data; should be either a phyloseq object or a count matrix}
 }
 \value{
-NMDS Plot
+QC PLots
 }
 \description{
 Function for TaxNorm input data
-}
-\examples{
-TaxNorm_QC_Input()
-
 }

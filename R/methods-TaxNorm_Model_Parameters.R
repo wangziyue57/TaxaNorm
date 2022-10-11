@@ -15,7 +15,9 @@
 #' @param mu Passed to `mu` slot
 #' @param theta Passed to `theta` slot
 #' @param pi Passed to `pi` slot
-#'
+#' @param x  TaxNorm_Model_Parameters object
+#' @param value Replacement value
+
 #' @details
 #' Parameters for TaxNorm Method
 #' @examples

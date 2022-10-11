@@ -19,7 +19,9 @@
 #' @param ecdf Passed to `ecdf` slot
 #' @param model_pars Passed to `model_pars` slot
 #' @param converge Passed to `converge` slot
-#'
+#' @param x  TaxNorm_Results object
+#' @param value Replacement value
+
 #' @details
 #' All results from the TaxNorm method and what was used to get those results
 #' @examples

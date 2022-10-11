@@ -2,16 +2,20 @@
 #' @name TaxNorm_QC_Input
 #' @param data (Required) Input data; should be either a phyloseq object or a count matrix
 #'
-#' @return NMDS Plot
+#' @return QC PLots
 #'
+#' @import ggplot2
 #' @examples
-#' TaxNorm_QC_Input()
+#'
 #'
 #' @export
 
 
 
 TaxNorm_QC_Input <- function(data){
+
+  var <- NULL
+  zero <- NULL
 
   depth <- sample_sums(data)
 

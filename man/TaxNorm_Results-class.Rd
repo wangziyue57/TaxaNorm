@@ -62,6 +62,10 @@ TaxNorm_Results(input_data, rawdata, normdata, ecdf, model_pars, converge)
 \item{model_pars}{Passed to \code{model_pars} slot}
 
 \item{converge}{Passed to \code{converge} slot}
+
+\item{x}{TaxNorm_Results object}
+
+\item{value}{Replacement value}
 }
 \description{
 S4 class to store TaxNorm Results
@@ -71,19 +75,19 @@ All results from the TaxNorm method and what was used to get those results
 }
 \section{Functions}{
 \itemize{
-\item \code{input_data,TaxNorm_Results-method}: Return \code{input_data} slot
+\item \code{input_data(TaxNorm_Results)}: Return \code{input_data} slot
 
-\item \code{rawdata,TaxNorm_Results-method}: Return \code{rawdata} slot
+\item \code{rawdata(TaxNorm_Results)}: Return \code{rawdata} slot
 
-\item \code{normdata,TaxNorm_Results-method}: Return \code{normdata} slot
+\item \code{normdata(TaxNorm_Results)}: Return \code{normdata} slot
 
-\item \code{ecdf,TaxNorm_Results-method}: Return \code{ecdf} slot
+\item \code{ecdf(TaxNorm_Results)}: Return \code{ecdf} slot
 
-\item \code{model_pars,TaxNorm_Results-method}: Return \code{model_pars} slot
+\item \code{model_pars(TaxNorm_Results)}: Return \code{model_pars} slot
 
-\item \code{converge,TaxNorm_Results-method}: Return \code{converge} slot
+\item \code{converge(TaxNorm_Results)}: Return \code{converge} slot
+
 }}
-
 \section{Slots}{
 
 \describe{

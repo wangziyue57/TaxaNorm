@@ -4,18 +4,16 @@
 \alias{TaxNorm_NMDS}
 \title{Function for TaxNorm NMDS}
 \usage{
-TaxNorm_NMDS(TaxNormResults, group)
+TaxNorm_NMDS(TaxNormResults, group_column)
 }
 \arguments{
 \item{TaxNormResults}{(Required) Input data; should be either a phyloseq object or a count matrix}
+
+\item{group_column}{column to cluster on}
 }
 \value{
 NMDS Plot
 }
 \description{
 Function for TaxNorm NMDS
-}
-\examples{
-TaxNorm_NMDS()
-
 }

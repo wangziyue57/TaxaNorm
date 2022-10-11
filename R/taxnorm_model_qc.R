@@ -1,16 +1,19 @@
 #' Function to QC TaxNorm algorithm
 #' @name TaxNorm_Model_QC
-#' @param TaxNormResults (Required) Input data; should be either a phyloseq object or a count matrix
+#' @param TaxNormResults  Input data; Results from TaxNorm normalization
 #'
 #' @return a list containing qc taxnorm object
 #'
+#' @import phyloseq ggplot2
 #' @examples
-#' TaxNorm_Model_QC()
 #'
 #' @export
 
 
 TaxNorm_Model_QC <- function(TaxNormResults){
+
+  Value <- NULL
+  Phylum <- NULL
 
   mymodelpars <- model_pars(TaxNormResults)
 

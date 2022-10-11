@@ -1,11 +1,11 @@
 #' Function for TaxNorm NMDS
 #' @name TaxNorm_NMDS
 #' @param TaxNormResults (Required) Input data; should be either a phyloseq object or a count matrix
-#'
+#' @param group_column column to cluster on
 #' @return NMDS Plot
 #'
+#' @importFrom vegan vegdist metaMDS
 #' @examples
-#' TaxNorm_NMDS()
 #'
 #' @export
 

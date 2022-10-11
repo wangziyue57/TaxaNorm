@@ -8,9 +8,8 @@
 #' @param ncores whether multiple cores is used for parallel computing; default is max(1, detectCores() - 1)
 #'
 #' @return a list containing the normalized count values
-#'
+#' @import phyloseq microbiome matrixStats
 #' @examples
-#' TaxNorm_Normalization()
 #'
 #' @export
 

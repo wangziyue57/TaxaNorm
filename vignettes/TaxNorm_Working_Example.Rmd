@@ -3,14 +3,14 @@ title: "TaxNorm_Working_Example"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, eval = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(TaxNorm)
 library(phyloseq)
 library(microbiome)
 ```
 
-```{r}
+```{r, eval = FALSE}
 data("TaxNorm_Example_Input", package = "TaxNorm")
 
 ```
@@ -18,7 +18,7 @@ data("TaxNorm_Example_Input", package = "TaxNorm")
 
 
 
-```{r}
+```{r, eval = FALSE}
 group <- sample_data(TaxNorm_Example_Input)$body_site
 HMP_norm <- TaxNorm_Normalization(data = TaxNorm_Example_Input, 
                      depth = NULL,
@@ -33,7 +33,11 @@ TaxNorm_Example_Output <- HMP_norm
 ```
 
 
-```{r}
+```{r, eval = FALSE}
 data("TaxNorm_Example_Output", package = "TaxNorm")
+```
+
+```{r, eval = FALSE}
+TaxNorm_Model_QC(TaxNorm_Example_Output)
 ```
 

@@ -7,15 +7,11 @@
 TaxNorm_Model_QC(TaxNormResults)
 }
 \arguments{
-\item{TaxNormResults}{(Required) Input data; should be either a phyloseq object or a count matrix}
+\item{TaxNormResults}{Input data; Results from TaxNorm normalization}
 }
 \value{
 a list containing qc taxnorm object
 }
 \description{
 Function to QC TaxNorm algorithm
-}
-\examples{
-TaxNorm_Model_QC()
-
 }

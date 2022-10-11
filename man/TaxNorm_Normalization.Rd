@@ -33,7 +33,3 @@ a list containing the normalized count values
 \description{
 Function to run TaxNorm algorithm
 }
-\examples{
-TaxNorm_Normalization()
-
-}

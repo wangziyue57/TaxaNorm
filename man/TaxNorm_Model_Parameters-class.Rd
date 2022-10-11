@@ -45,6 +45,10 @@ TaxNorm_Model_Parameters(coefficients, mu, theta, pi)
 \item{theta}{Passed to \code{theta} slot}
 
 \item{pi}{Passed to \code{pi} slot}
+
+\item{x}{TaxNorm_Model_Parameters object}
+
+\item{value}{Replacement value}
 }
 \description{
 S4 class to store TaxNorm Parameters
@@ -54,15 +58,15 @@ Parameters for TaxNorm Method
 }
 \section{Functions}{
 \itemize{
-\item \code{coefficients,TaxNorm_Model_Parameters-method}: Return \code{coefficients} slot
+\item \code{coefficients(TaxNorm_Model_Parameters)}: Return \code{coefficients} slot
 
-\item \code{mu,TaxNorm_Model_Parameters-method}: Return \code{mu} slot
+\item \code{mu(TaxNorm_Model_Parameters)}: Return \code{mu} slot
 
-\item \code{theta,TaxNorm_Model_Parameters-method}: Return \code{theta} slot
+\item \code{theta(TaxNorm_Model_Parameters)}: Return \code{theta} slot
 
-\item \code{pi,TaxNorm_Model_Parameters-method}: Return \code{pi} slot
+\item \code{pi(TaxNorm_Model_Parameters)}: Return \code{pi} slot
+
 }}
-
 \section{Slots}{
 
 \describe{
