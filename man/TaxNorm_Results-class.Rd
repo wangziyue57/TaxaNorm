@@ -22,9 +22,24 @@
 \alias{converge,TaxNorm_Results-method}
 \alias{TaxNorm_Results-converge}
 \alias{converge<-,TaxNorm_Results-method}
+\alias{llk,TaxNorm_Results-method}
+\alias{TaxNorm_Results-llk}
+\alias{llk<-,TaxNorm_Results-method}
+\alias{final_df,TaxNorm_Results-method}
+\alias{TaxNorm_Results-final_df}
+\alias{final_df<-,TaxNorm_Results-method}
 \title{TaxNorm Results}
 \usage{
-TaxNorm_Results(input_data, rawdata, normdata, ecdf, model_pars, converge)
+TaxNorm_Results(
+  input_data,
+  rawdata,
+  normdata,
+  ecdf,
+  model_pars,
+  converge,
+  llk,
+  final_df
+)
 
 \S4method{input_data}{TaxNorm_Results}(x)
 
@@ -49,6 +64,14 @@ TaxNorm_Results(input_data, rawdata, normdata, ecdf, model_pars, converge)
 \S4method{converge}{TaxNorm_Results}(x)
 
 \S4method{converge}{TaxNorm_Results}(x) <- value
+
+\S4method{llk}{TaxNorm_Results}(x)
+
+\S4method{llk}{TaxNorm_Results}(x) <- value
+
+\S4method{final_df}{TaxNorm_Results}(x)
+
+\S4method{final_df}{TaxNorm_Results}(x) <- value
 }
 \arguments{
 \item{input_data}{passed to \code{input_data} slot}
@@ -62,6 +85,10 @@ TaxNorm_Results(input_data, rawdata, normdata, ecdf, model_pars, converge)
 \item{model_pars}{Passed to \code{model_pars} slot}
 
 \item{converge}{Passed to \code{converge} slot}
+
+\item{llk}{Passed to \code{llk} slot}
+
+\item{final_df}{Passed to \code{final_df} slot}
 
 \item{x}{TaxNorm_Results object}
 
@@ -87,6 +114,10 @@ All results from the TaxNorm method and what was used to get those results
 
 \item \code{converge(TaxNorm_Results)}: Return \code{converge} slot
 
+\item \code{llk(TaxNorm_Results)}: Return \code{llk} slot
+
+\item \code{final_df(TaxNorm_Results)}: Return \code{final_df} slot
+
 }}
 \section{Slots}{
 
@@ -101,6 +132,10 @@ All results from the TaxNorm method and what was used to get those results
 
 \item{\code{model_pars}}{\link{TaxNorm_Model_Parameters} list of model parameters}
 
-\item{\code{converge}}{\verb{vector(<logical>)}}
+\item{\code{converge}}{\verb{vector(<logical>)} converge}
+
+\item{\code{llk}}{\code{ANY} llk}
+
+\item{\code{final_df}}{\code{ANY} final_df}
 }}
 

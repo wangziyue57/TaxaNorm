@@ -14,6 +14,10 @@
 \alias{model_pars<-}
 \alias{converge}
 \alias{converge<-}
+\alias{llk}
+\alias{llk<-}
+\alias{final_df}
+\alias{final_df<-}
 \alias{coefficients}
 \alias{coefficients<-}
 \alias{mu}
@@ -47,6 +51,14 @@ model_pars(x, ...) <- value
 converge(x, ...)
 
 converge(x, ...) <- value
+
+llk(x, ...)
+
+llk(x, ...) <- value
+
+final_df(x, ...)
+
+final_df(x, ...) <- value
 
 coefficients(x, ...)
 

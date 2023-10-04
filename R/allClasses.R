@@ -1,5 +1,6 @@
 ##----------------------------------------------------------------------------##
 ## All classes
+# run this devtools::document() to update NAMESPACE
 ##----------------------------------------------------------------------------##
 
 #' @import methods
@@ -36,7 +37,9 @@ setClass("TaxNorm_Results",
                    normdata = "data.frame",
                    ecdf = "data.frame",
                    model_pars ="TaxNorm_Model_Parameters",
-                   converge = "logical"))
+                   converge = "logical",
+                   llk = "ANY",
+                   final_df = "ANY"))
 
 setClassUnion("TaxNorm_Results_OR_NULL", members = c("TaxNorm_Results", "NULL"))
 

@@ -49,7 +49,7 @@ There are three main steps in using this package:
 For the newest, but potentially unstable, version of the package, direct github installation is also supported.
 
 ```{r, eval = FALSE}
-remotes::install_github("wangziyue57/TaxNorm")
+#remotes::install_github("wangziyue57/TaxNorm")
 ```
 
 ### Loading Package into R Environment 
@@ -57,32 +57,71 @@ remotes::install_github("wangziyue57/TaxNorm")
 ```{r, eval = FALSE}
 library(TaxNorm)
 library(phyloseq)
+library(microbiome)
 library(ggplot2)
 library(vegan)
+library(MASS)
 ```
 
 
 
 ## Example Usage
 
+Basic Useage
+```{r, eval = FALSE}
+data("TaxNorm_Example_Input", package = "TaxNorm")
+
+# run normalization
+Normalized_Data <- TaxNorm_Normalization(data= TaxNorm_Example_Input, 
+                                         depth = NULL, 
+                                         group = sample_data(TaxNorm_Example_Input)$body_site, 
+                                         meta.data = NULL,
+                                  filter.cell.num = 10,
+                                  filter.taxa.count = 0,
+                                  random = FALSE,
+                                  ncores = NULL)
+#save(Normalized_Data, file = "sample_taxnormresults.RData")
+load(file = "sample_taxnormresults.RData")
+RES <- TaxaNorm_Summurize(res = Normalized_Data) # list the post-normalized data
+
+# run diagnosis test
+Diagnose_Data <- TaxaNorm_Diagnose(res = Normalized_Data, prev = TRUE, equiv = TRUE)
+
+```
+
 
 ### Load Input Data
 
-Built in example data can be loaded with the command below. Data must be a phyloseq object or a count matrix. 
+Built in example data as a phyloseq object can be loaded with the command below. 
 
 ```{r, eval = FALSE}
-
 data("TaxNorm_Example_Input", package = "TaxNorm")
 
-
 ```
 
-### Convert Count Matrix to Phyloseq
+
+### Pre-process Input Data
+
+We have prepared several QC figures for the input data characters, which give a preliminary criteria on pre-filtering rare taxa with low information before any analysis. This will improve the power and computational efficiency for the algorithm. If the user already has the cleaned data or pre-processed the data by themselves before, they can ignore and skip this step.
 
 ```{r, eval = FALSE}
-
+qc_data <- TaxNorm_QC_Input(TaxNorm_Example_Input)
 ```
 
+Here we provide a popular option to ensure at least `filter.sample.num` samples with a count of `filter.taxa.count` or more, where `filter.sample.num` can be chosen as any arbitrary value or the sample size of the smallest group of samples. By default, we used `filter.taxa.count=1` and `filter.sample.num=10`. This criteria is incorporated in the following main function `TaxNorm_Normalization()` as well. 
+
+```{r, eval = FALSE}
+filter.sample.num =1
+taxaIn <- rowSums(abundances(TaxNorm_Example_Input) > filter.taxa.count) > filter.sample.num
+TaxNorm_Example_Input <- prune_taxa(taxaIn, TaxNorm_Example_Input) 
+```
+
+Users can apply any of their customized filtering criteria as well. Alternatively, a basic pre-filtering is to keep only rows that have at least 10 reads total:
+
+```{r, eval = FALSE}
+taxaIn <- rowSums(abundances(TaxNorm_Example_Input)) > 10
+TaxNorm_Example_Input <- prune_taxa(taxaIn, TaxNorm_Example_Input) 
+```
 
 ### QC Input Data
 
@@ -101,7 +140,6 @@ group <- sample_data(TaxNorm_Example_Input)$body_site
 Normalized_Data <- TaxNorm_Normalization(data = TaxNorm_Example_Input, 
                      depth = NULL,
                      group = group, 
-                     filter.sample.num = 1,
                      filter.taxa.count = 0,
                      random = TRUE,
                      ncores = 1)

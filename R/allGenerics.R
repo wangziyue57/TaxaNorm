@@ -46,12 +46,28 @@ setGeneric("model_pars", function(x, ...) standardGeneric("model_pars"))
 #' @rdname TaxNormGenerics
 setGeneric("model_pars<-",
            function(x, ..., value) standardGeneric("model_pars<-"))
+
 #' @rdname TaxNormGenerics
 setGeneric("converge", function(x, ...) standardGeneric("converge"))
 
 #' @rdname TaxNormGenerics
 setGeneric("converge<-",
            function(x, ..., value) standardGeneric("converge<-"))
+
+
+#' @rdname TaxNormGenerics
+setGeneric("llk", function(x, ...) standardGeneric("llk"))
+
+#' @rdname TaxNormGenerics
+setGeneric("llk<-",
+           function(x, ..., value) standardGeneric("llk<-"))
+
+#' @rdname TaxNormGenerics
+setGeneric("final_df", function(x, ...) standardGeneric("final_df"))
+
+#' @rdname TaxNormGenerics
+setGeneric("final_df<-",
+           function(x, ..., value) standardGeneric("final_df<-"))
 
 #' @rdname TaxNormGenerics
 setGeneric("coefficients", function(x, ...) standardGeneric("coefficients"))

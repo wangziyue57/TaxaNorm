@@ -11,14 +11,17 @@
 #' @slot normdata `data.frame` Normalized Data
 #' @slot ecdf `data.frame` ecdf
 #' @slot model_pars [TaxNorm_Model_Parameters] list of model parameters
-#' @slot converge  `vector(<logical>)`
-#'
+#' @slot converge  `vector(<logical>)` converge
+#' @slot llk  `ANY` llk
+#' @slot final_df  `ANY` final_df
 #' @param input_data passed to `input_data` slot
 #' @param rawdata Passed to `rawdata` slot
 #' @param normdata Passed to `normdata` slot
 #' @param ecdf Passed to `ecdf` slot
 #' @param model_pars Passed to `model_pars` slot
 #' @param converge Passed to `converge` slot
+#' @param llk Passed to `llk` slot
+#' @param final_df Passed to `final_df` slot
 #' @param x  TaxNorm_Results object
 #' @param value Replacement value
 
@@ -34,14 +37,16 @@ NULL
 #' @rdname TaxNorm_Results-class
 #' @export
 
-TaxNorm_Results <- function(input_data,rawdata, normdata, ecdf, model_pars,converge) {
+TaxNorm_Results <- function(input_data,rawdata, normdata, ecdf, model_pars,converge,llk,final_df) {
   new2("TaxNorm_Results",
        input_data = input_data,
        rawdata = rawdata,
        normdata = normdata,
        ecdf = ecdf,
        model_pars = model_pars,
-       converge = converge)
+       converge = converge,
+       llk = llk,
+       final_df = final_df)
 }
 
 ##----------------------------------------------------------------------------##
@@ -51,7 +56,6 @@ TaxNorm_Results <- function(input_data,rawdata, normdata, ecdf, model_pars,conve
 #' @describeIn TaxNorm_Results-class Return `input_data` slot
 #' @aliases TaxNorm_Results-input_data
 #' @export
-
 setMethod("input_data", "TaxNorm_Results", function(x) {
   x@input_data
 })
@@ -67,7 +71,6 @@ setReplaceMethod("input_data", "TaxNorm_Results", function(x,value) {
 #' @describeIn TaxNorm_Results-class Return `rawdata` slot
 #' @aliases TaxNorm_Results-rawdata
 #' @export
-
 setMethod("rawdata", "TaxNorm_Results", function(x) {
   x@rawdata
 })
@@ -99,7 +102,6 @@ setReplaceMethod("normdata", "TaxNorm_Results", function(x,value) {
 #' @describeIn TaxNorm_Results-class Return `ecdf` slot
 #' @aliases TaxNorm_Results-ecdf
 #' @export
-
 setMethod("ecdf", "TaxNorm_Results", function(x) {
   x@ecdf
 })
@@ -115,7 +117,6 @@ setReplaceMethod("ecdf", "TaxNorm_Results", function(x,value) {
 #' @describeIn TaxNorm_Results-class Return `model_pars` slot
 #' @aliases TaxNorm_Results-model_pars
 #' @export
-
 setMethod("model_pars", "TaxNorm_Results", function(x) {
   x@model_pars
 })
@@ -132,7 +133,6 @@ setReplaceMethod("model_pars", "TaxNorm_Results", function(x,value) {
 #' @describeIn TaxNorm_Results-class Return `converge` slot
 #' @aliases TaxNorm_Results-converge
 #' @export
-
 setMethod("converge", "TaxNorm_Results", function(x) {
   x@converge
 })
@@ -144,4 +144,36 @@ setReplaceMethod("converge", "TaxNorm_Results", function(x,value) {
   validObject(x)
   x
 })
+
+
+#' @describeIn TaxNorm_Results-class Return `llk` slot
+#' @aliases TaxNorm_Results-llk
+#' @export
+setMethod("llk", "TaxNorm_Results", function(x) {
+  x@llk
+})
+
+#' @rdname TaxNorm_Results-class
+#' @export
+setReplaceMethod("llk", "TaxNorm_Results", function(x,value) {
+  x@llk <- value
+  validObject(x)
+  x
+})
+
+#' @describeIn TaxNorm_Results-class Return `final_df` slot
+#' @aliases TaxNorm_Results-final_df
+#' @export
+setMethod("final_df", "TaxNorm_Results", function(x) {
+  x@final_df
+})
+
+#' @rdname TaxNorm_Results-class
+#' @export
+setReplaceMethod("final_df", "TaxNorm_Results", function(x,value) {
+  x@final_df <- value
+  validObject(x)
+  x
+})
+
 ##----------------------------------------------------------------------------##

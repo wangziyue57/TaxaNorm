@@ -8,9 +8,10 @@ TaxNorm_Normalization(
   data,
   depth = NULL,
   group = NULL,
-  filter.sample.num = 10,
+  meta.data = NULL,
+  filter.cell.num = 10,
   filter.taxa.count = 0,
-  random = TRUE,
+  random = FALSE,
   ncores = NULL
 )
 }
@@ -21,11 +22,11 @@ TaxNorm_Normalization(
 
 \item{group}{condition variables if samples are from multiple groups; should be correpsond to the column of the count data. default is NULL, where no grouping is considered}
 
-\item{filter.sample.num, filter.taxa.count}{taxa with "filter.taxa.count" in more than "filter.sample.num" samples will be removed before testing. default is keep taxa appear in at least 10 samples within each group}
-
 \item{random}{calculate randomized normal quantile residual}
 
 \item{ncores}{whether multiple cores is used for parallel computing; default is max(1, detectCores() - 1)}
+
+\item{filter.sample.num, filter.taxa.count}{taxa with "filter.taxa.count" in more than "filter.sample.num" samples will be removed before testing. default is keep taxa appear in at least 10 samples within each group}
 }
 \value{
 a list containing the normalized count values
