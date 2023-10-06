@@ -81,11 +81,10 @@ Normalized_Data <- TaxNorm_Normalization(data= TaxNorm_Example_Input,
                                   random = FALSE,
                                   ncores = NULL)
 #save(Normalized_Data, file = "sample_taxnormresults.RData")
-load(file = "sample_taxnormresults.RData")
-RES <- TaxaNorm_Summurize(res = Normalized_Data) # list the post-normalized data
+#load(file = "sample_taxnormresults.RData")
 
 # run diagnosis test
-Diagnose_Data <- TaxaNorm_Diagnose(res = Normalized_Data, prev = TRUE, equiv = TRUE)
+Diagnose_Data <- TaxNorm_Run_Diagnose(Normalized_Results = Normalized_Data, prev = TRUE, equiv = TRUE, group = sample_data(TaxNorm_Example_Input)$body_site)
 
 ```
 

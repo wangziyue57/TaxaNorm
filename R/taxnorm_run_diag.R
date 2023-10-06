@@ -20,6 +20,11 @@ TaxNorm_Run_Diagnose <- function(Normalized_Results, prev = TRUE, equiv = TRUE,g
 
   llk.full <- llk(res)
 
+
+
+  depth <- colSums(count)
+
+
   # fit reduced model
   # test 1: existence of effect or not; by fitting intercept-only regression
   if(prev){
@@ -84,19 +89,19 @@ TaxNorm_Run_Diagnose <- function(Normalized_Results, prev = TRUE, equiv = TRUE,g
 
       if(zero >= 10){
         if(is.null(group)){
-          fit_reduce_2[[i]] <- suppressWarnings(suppressWarnings(zinb.reg(formula = count[i,] ~ offset(log(depth)) | 1 | 1,
+          fit_reduce_2[[i]] <- suppressWarnings(suppressWarnings(zinb.reg(formula = as.numeric(count[i,]) ~ offset(log(depth)) | 1 | 1,
                                                                           control = zinb.control(trace=FALSE, EM=TRUE))))
         }else{
-          fit_reduce_2[[i]] <- suppressWarnings(zinb.reg(formula = count[i,] ~ offset(log(depth)) + group | 1 | 1,
+          fit_reduce_2[[i]] <- suppressWarnings(zinb.reg(formula = as.numeric(count[i,]) ~ offset(log(depth)) + group | 1 | 1,
                                                          control = zinb.control(trace=FALSE)))
         }
       }
       if(zero < 10){
         if(is.null(group)){
-          fit_reduce_2[[i]] <- suppressWarnings(suppressWarnings(nb.reg(formula = count[i,] ~ offset(log(depth)) | 1,
+          fit_reduce_2[[i]] <- suppressWarnings(suppressWarnings(nb.reg(formula = as.numeric(count[i,]) ~ offset(log(depth)) | 1,
                                                                         control = zinb.control(trace=FALSE, EM=TRUE))))
         }else{
-          fit_reduce_2[[i]] <- suppressWarnings(suppressWarnings(nb.reg(formula = count[i,] ~ offset(log(depth)) + group | 1,
+          fit_reduce_2[[i]] <- suppressWarnings(suppressWarnings(nb.reg(formula = as.numeric(count[i,]) ~ offset(log(depth)) + group | 1,
                                                                         control = zinb.control(trace=FALSE, EM=TRUE))))
         }
       }
@@ -112,7 +117,7 @@ TaxNorm_Run_Diagnose <- function(Normalized_Results, prev = TRUE, equiv = TRUE,g
       llk_H1 <- llk.full
       llk_H0 <- llk.null
 
-      df_H1 <- res$df
+      df_H1 <- final_df(res)
       df_H0 <- sapply(fit_reduce_2, function(x) x$df.residual)
 
     }else{
