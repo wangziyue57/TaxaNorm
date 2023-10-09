@@ -7,14 +7,14 @@ TaxNorm is the R package for a novel feature-wise normalization method for micro
 Current stable release:
 
 ```r
-install.packages("taxanoRm")
+install.packages("TaxNorm")
 ```
 
 Build from GitHub:
 
 ```r
 if (!require(remotes)) install.packages("remotes")
-remotes::install_github("wangziyue57/taxanoRm", 
+remotes::install_github("wangziyue57/TaxaNorm", 
                         dependencies = TRUE, 
                         build_vignettes = TRUE)
 ```
