@@ -49,13 +49,13 @@ There are three main steps in using this package:
 For the newest, but potentially unstable, version of the package, direct github installation is also supported.
 
 ```{r, eval = FALSE}
-#remotes::install_github("wangziyue57/TaxNorm")
+remotes::install_github("wangziyue57/TaxNorm")
 ```
 
 ### Loading Package into R Environment 
 
 ```{r, eval = FALSE}
-# library(TaxNorm)
+library(TaxNorm)
 # library(phyloseq)
 # library(microbiome)
 # library(ggplot2)
@@ -72,7 +72,7 @@ Basic Useage
 data("TaxNorm_Example_Input", package = "TaxNorm")
 
 # run normalization
-Normalized_Data <- TaxNorm_Normalization(data= TaxNorm_Example_Input, 
+TaxNorm_Example_Output <- TaxNorm_Normalization(data= TaxNorm_Example_Input, 
                                          depth = NULL, 
                                          group = sample_data(TaxNorm_Example_Input)$body_site, 
                                          meta.data = NULL,
@@ -80,11 +80,10 @@ Normalized_Data <- TaxNorm_Normalization(data= TaxNorm_Example_Input,
                                   filter.taxa.count = 0,
                                   random = FALSE,
                                   ncores = NULL)
-#save(Normalized_Data, file = "sample_taxnormresults.RData")
-#load(file = "sample_taxnormresults.RData")
 
+#save(TaxNorm_Example_Output, file = "../data/TaxNorm_Example_Output.rda")
 # run diagnosis test
-Diagnose_Data <- TaxNorm_Run_Diagnose(Normalized_Results = Normalized_Data, prev = TRUE, equiv = TRUE, group = sample_data(TaxNorm_Example_Input)$body_site)
+Diagnose_Data <- TaxNorm_Run_Diagnose(Normalized_Results = TaxNorm_Example_Output, prev = TRUE, equiv = TRUE, group = sample_data(TaxNorm_Example_Input)$body_site)
 
 ```
 
@@ -111,6 +110,7 @@ Here we provide a popular option to ensure at least `filter.sample.num` samples 
 
 ```{r, eval = FALSE}
 filter.sample.num =1
+filter.taxa.count = 10
 taxaIn <- rowSums(abundances(TaxNorm_Example_Input) > filter.taxa.count) > filter.sample.num
 TaxNorm_Example_Input <- prune_taxa(taxaIn, TaxNorm_Example_Input) 
 ```
@@ -159,10 +159,11 @@ TaxNorm_Model_QC(TaxNormResults = TaxNorm_Example_Output)
 
 
 ### TaxNorm NMDS
+# Not running currently 
 
 ```{r, eval = FALSE}
 
-TaxNorm_NMDS(TaxNorm_Example_Output, group = "body_site")
+TaxNorm_NMDS(TaxNormResults = TaxNorm_Example_Output, group_column = "body_site")
 
 ```
 
