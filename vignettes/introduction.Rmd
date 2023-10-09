@@ -1,0 +1,171 @@
+---
+title: "TaxNorm Introduction"
+output: 
+  rmarkdown::html_vignette:
+    fig_caption: yes
+vignette: >
+  %\VignetteIndexEntry{TaxNorm Introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+## Introduction
+
+This document introduces the `TaxNorm` R package, a package for normalizing microbiome taxa data. Here, we will go through how to install, analyze and visualize microbiome data using this package. `TaxNorm` implements the Zero Inflated Negative Binomial (ZINB) method to normalize microbiome data. 
+
+## What is the ZINB method?
+
+
+## Outline
+
+There are three main steps in using this package: 
+
+- **Load and QC Input Data**: In the package we have an example data set from the phyloeq package that shows shows the format needed for analysis. These data can be generated using methods blah blah blah. 
+
+- **Running ZINB Normalization Function**: The `TaxNorm_Normalization` function is runn using the above data on the input. This function implements the ZINB method for normalization.
+
+- **Visualizing and Quality Control**: Last, visualization and quality control measures are built into the package for use. 
+
+
+## Installation
+
+### Required Packages 
+
+`TaxNorm` requires the packages `phyloeq` and `microbiome` which can be found on bioconductor. 
+
+### Installation from Bioconductor
+
+### Installation from Github
+
+For the newest, but potentially unstable, version of the package, direct github installation is also supported.
+
+```{r, eval = FALSE}
+remotes::install_github("wangziyue57/TaxNorm")
+```
+
+### Loading Package into R Environment 
+
+```{r, eval = FALSE}
+library(TaxNorm)
+# library(phyloseq)
+# library(microbiome)
+# library(ggplot2)
+# library(vegan)
+# library(MASS)
+```
+
+
+
+## Example Usage
+
+Basic Useage
+```{r, eval = FALSE}
+data("TaxNorm_Example_Input", package = "TaxNorm")
+
+# run normalization
+TaxNorm_Example_Output <- TaxNorm_Normalization(data= TaxNorm_Example_Input, 
+                                         depth = NULL, 
+                                         group = sample_data(TaxNorm_Example_Input)$body_site, 
+                                         meta.data = NULL,
+                                  filter.cell.num = 10,
+                                  filter.taxa.count = 0,
+                                  random = FALSE,
+                                  ncores = NULL)
+
+#save(TaxNorm_Example_Output, file = "../data/TaxNorm_Example_Output.rda")
+# run diagnosis test
+Diagnose_Data <- TaxNorm_Run_Diagnose(Normalized_Results = TaxNorm_Example_Output, prev = TRUE, equiv = TRUE, group = sample_data(TaxNorm_Example_Input)$body_site)
+
+```
+
+
+### Load Input Data
+
+Built in example data as a phyloseq object can be loaded with the command below. 
+
+```{r, eval = FALSE}
+data("TaxNorm_Example_Input", package = "TaxNorm")
+
+```
+
+
+### Pre-process Input Data
+
+We have prepared several QC figures for the input data characters, which give a preliminary criteria on pre-filtering rare taxa with low information before any analysis. This will improve the power and computational efficiency for the algorithm. If the user already has the cleaned data or pre-processed the data by themselves before, they can ignore and skip this step.
+
+```{r, eval = FALSE}
+qc_data <- TaxNorm_QC_Input(TaxNorm_Example_Input)
+```
+
+Here we provide a popular option to ensure at least `filter.sample.num` samples with a count of `filter.taxa.count` or more, where `filter.sample.num` can be chosen as any arbitrary value or the sample size of the smallest group of samples. By default, we used `filter.taxa.count=1` and `filter.sample.num=10`. This criteria is incorporated in the following main function `TaxNorm_Normalization()` as well. 
+
+```{r, eval = FALSE}
+filter.sample.num =1
+filter.taxa.count = 10
+taxaIn <- rowSums(abundances(TaxNorm_Example_Input) > filter.taxa.count) > filter.sample.num
+TaxNorm_Example_Input <- prune_taxa(taxaIn, TaxNorm_Example_Input) 
+```
+
+Users can apply any of their customized filtering criteria as well. Alternatively, a basic pre-filtering is to keep only rows that have at least 10 reads total:
+
+```{r, eval = FALSE}
+taxaIn <- rowSums(abundances(TaxNorm_Example_Input)) > 10
+TaxNorm_Example_Input <- prune_taxa(taxaIn, TaxNorm_Example_Input) 
+```
+
+### QC Input Data
+
+```{r, eval = FALSE}
+qc_data <- TaxNorm_QC_Input(TaxNorm_Example_Input)
+```
+
+### Run Normalization
+
+The normalization is run and returns a `TaxNorm_Results` object. This object contains the input data, raw data, normdata, ecdf, model parameters, and convergence. 
+
+```{r, eval = FALSE}
+#Pick group from phyloseq object
+group <- sample_data(TaxNorm_Example_Input)$body_site
+#Run Normalization function
+Normalized_Data <- TaxNorm_Normalization(data = TaxNorm_Example_Input, 
+                     depth = NULL,
+                     group = group, 
+                     filter.taxa.count = 0,
+                     random = TRUE,
+                     ncores = 1)
+
+```
+
+
+
+### QC TaxNorm Model
+
+```{r, eval = FALSE}
+
+data("TaxNorm_Example_Output", package = "TaxNorm")
+
+
+TaxNorm_Model_QC(TaxNormResults = TaxNorm_Example_Output)
+```
+
+
+### TaxNorm NMDS
+# Not running currently 
+
+```{r, eval = FALSE}
+
+TaxNorm_NMDS(TaxNormResults = TaxNorm_Example_Output, group_column = "body_site")
+
+```
+
+
+
