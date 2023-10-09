@@ -5,7 +5,9 @@
 #' @return NMDS Plot
 #'
 #' @importFrom vegan vegdist metaMDS
+#' @importFrom ggplot2 ggplot stat_ellipse aes_string theme_classic
 #' @examples
+#' \dontrun{TaxNorm_NMDS(TaxNorm_Example_Output, group = "body_site")}
 #'
 #' @export
 

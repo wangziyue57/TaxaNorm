@@ -9,10 +9,10 @@ Authors@R: c(
 Maintainer: Dillon Lloyd <dtlloyd@ncsu.edu>
 Description: A novel feature-wise normalization method based on zero-inflated negative binomial model. This method assumes that the effects of sequencing depth vary for each taxon on their mean and also incorporates a rational link of zero probability and taxon dispersion as a function of sequencing depth.
 License: GPL-3
-Depends: R (>= 4.0.3)
+Depends: R (>= 4.0),
+	       microbiome,
 Imports: phyloseq, 
-	 stats,
-	 microbiome, 
+	 stats, 
 	 S4Vectors,
 	 BiocGenerics,
 	 vegan,
@@ -21,6 +21,7 @@ Imports: phyloseq,
 	 future,
 	 future.apply,
 	 matrixStats,
+	 pscl,
 	 parallelly,
 	 ggplot2,
 	 utils

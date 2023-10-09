@@ -17,3 +17,7 @@ NMDS Plot
 \description{
 Function for TaxNorm NMDS
 }
+\examples{
+\dontrun{TaxNorm_NMDS(TaxNorm_Example_Output, group = "body_site")}
+
+}

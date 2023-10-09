@@ -15,3 +15,7 @@ QC PLots
 \description{
 Function for TaxNorm input data
 }
+\examples{
+\dontrun{qc_data <- TaxNorm_QC_Input(TaxNorm_Example_Input)}
+
+}

@@ -4,9 +4,9 @@
 #'
 #' @return QC PLots
 #'
-#' @import ggplot2
+#' @importFrom ggplot2 ggplot aes geom_point geom_smooth scale_x_continuous scale_y_continuous geom_abline ggtitle theme_classic
 #' @examples
-#'
+#' \dontrun{qc_data <- TaxNorm_QC_Input(TaxNorm_Example_Input)}
 #'
 #' @export
 

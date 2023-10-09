@@ -8,10 +8,22 @@ TaxNorm_Run_Diagnose(Normalized_Results, prev = TRUE, equiv = TRUE, group)
 }
 \arguments{
 \item{Normalized_Results}{(Required) Input results from from run_norm()}
+
+\item{prev}{run prev test}
+
+\item{equiv}{run equiv test}
+
+\item{group}{group used for taxanorm normalization}
 }
 \value{
 a list containing the normalized count values
 }
 \description{
 Function to run TaxNorm algorithm
+}
+\examples{
+\dontrun{Diagnose_Data <- TaxNorm_Run_Diagnose(Normalized_Results = Normalized_Data,
+                                        prev = TRUE,
+                                        equiv = TRUE,
+                                        group = sample_data(TaxNorm_Example_Input)$body_site)}
 }

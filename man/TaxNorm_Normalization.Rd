@@ -22,15 +22,30 @@ TaxNorm_Normalization(
 
 \item{group}{condition variables if samples are from multiple groups; should be correpsond to the column of the count data. default is NULL, where no grouping is considered}
 
+\item{meta.data}{meta data for Taxa}
+
+\item{filter.cell.num}{taxa with "filter.cell.num" in more than the value provided will be filtered}
+
+\item{filter.taxa.count}{"filter.taxa.count" samples will be removed before testing. default is keep taxa appear in at least 10 samples within each group}
+
 \item{random}{calculate randomized normal quantile residual}
 
 \item{ncores}{whether multiple cores is used for parallel computing; default is max(1, detectCores() - 1)}
-
-\item{filter.sample.num, filter.taxa.count}{taxa with "filter.taxa.count" in more than "filter.sample.num" samples will be removed before testing. default is keep taxa appear in at least 10 samples within each group}
 }
 \value{
-a list containing the normalized count values
+a TaxaNorm Object containing the normalized count values and accessory information
 }
 \description{
 Function to run TaxNorm algorithm
+}
+\examples{
+\dontrun{
+Normalized_Data <- TaxNorm_Normalization(data= TaxNorm_Example_Input,
+                                         depth = NULL,
+                                         group = sample_data(TaxNorm_Example_Input)$body_site,
+                                         meta.data = NULL,
+                                         filter.cell.num = 10,
+                                         filter.taxa.count = 0,
+                                         random = FALSE,
+                                         ncores = NULL)}
 }

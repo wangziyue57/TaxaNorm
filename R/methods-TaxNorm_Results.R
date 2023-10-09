@@ -27,7 +27,14 @@
 
 #' @details
 #' All results from the TaxNorm method and what was used to get those results
-#' @examples
+#' @examples \dontrun{TaxNormResults(input_data = input_data,
+#'                                   rawdata = rawdata,
+#'                                    normdata = normdata,
+#'                                    ecdf = ecdf,
+#'                                    model_pars = model_pars,
+#'                                    converge = converge,
+#'                                    llk = llk,
+#'                                    final_df = final_df)}
 
 NULL
 

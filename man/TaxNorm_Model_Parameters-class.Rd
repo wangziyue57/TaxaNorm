@@ -79,3 +79,7 @@ Parameters for TaxNorm Method
 \item{\code{pi}}{\code{matrix} pi}
 }}
 
+\examples{
+\dontrun{
+TaxNorm_Model_Parameters(coefficients = coefficients,mu = mu,theta = theta,pi = pi)}
+}

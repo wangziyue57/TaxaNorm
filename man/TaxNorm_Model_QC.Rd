@@ -15,3 +15,6 @@ a list containing qc taxnorm object
 \description{
 Function to QC TaxNorm algorithm
 }
+\examples{
+\dontrun{TaxNorm_Model_QC(TaxNormResults = TaxNorm_Example_Output)}
+}

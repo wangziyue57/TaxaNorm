@@ -55,12 +55,12 @@ For the newest, but potentially unstable, version of the package, direct github 
 ### Loading Package into R Environment 
 
 ```{r, eval = FALSE}
-library(TaxNorm)
-library(phyloseq)
-library(microbiome)
-library(ggplot2)
-library(vegan)
-library(MASS)
+# library(TaxNorm)
+# library(phyloseq)
+# library(microbiome)
+# library(ggplot2)
+# library(vegan)
+# library(MASS)
 ```
 
 

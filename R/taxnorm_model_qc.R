@@ -4,9 +4,10 @@
 #'
 #' @return a list containing qc taxnorm object
 #'
-#' @import phyloseq ggplot2
+#' @import phyloseq
+#' @importFrom ggplot2 ggplot geom_density scale_color_brewer labs theme_classic
 #' @examples
-#'
+#' \dontrun{TaxNorm_Model_QC(TaxNormResults = TaxNorm_Example_Output)}
 #' @export
 
 

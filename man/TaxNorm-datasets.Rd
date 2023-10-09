@@ -27,3 +27,8 @@ Example data
 Example output
 }
 
+\examples{
+\dontrun{data(TaxNorm_Example_Input, package = "TaxNorm")
+          data(TaxNorm_Example_Output, package = "TaxNorm")}
+
+}

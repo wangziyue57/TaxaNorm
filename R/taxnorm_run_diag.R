@@ -1,12 +1,16 @@
 #' Function to run TaxNorm algorithm
 #' @name TaxNorm_Run_Diagnose
 #' @param Normalized_Results (Required) Input results from from run_norm()
-#' @param prev
-#' @param equiv
+#' @param prev run prev test
+#' @param equiv run equiv test
+#' @param group group used for taxanorm normalization
 #' @return a list containing the normalized count values
 #' @import phyloseq microbiome matrixStats
 #' @examples
-#'
+#' \dontrun{Diagnose_Data <- TaxNorm_Run_Diagnose(Normalized_Results = Normalized_Data,
+#'                                         prev = TRUE,
+#'                                         equiv = TRUE,
+#'                                         group = sample_data(TaxNorm_Example_Input)$body_site)}
 #' @export
 #'
 #'
