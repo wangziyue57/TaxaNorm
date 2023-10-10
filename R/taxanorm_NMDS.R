@@ -13,10 +13,20 @@
 
 TaxaNorm_NMDS <- function(TaxaNormResults,group_column){
 
-  mynorm <- normdata(TaxNormResults)
+  mynorm <- normdata(TaxaNormResults)
 
-  mydata <- input_data(TaxNormResults)
 
+  mynorm[sapply(mynorm, is.infinite)] <- NA
+
+  cols <- sapply(mynorm, is.numeric)
+  mynorm[cols] <- lapply(mynorm[cols], function(x)
+    replace(x, is.na(x), min(x, na.rm = TRUE)))
+
+
+
+  mydata <- input_data(TaxaNormResults)
+
+  #take the lowest non inf number, replace -inf with lowest value
   normdata <- mynorm + abs(min(mynorm, na.rm = T))
 
   dist <- vegan::vegdist(t(normdata), method="bray", na.rm = T)
