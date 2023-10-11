@@ -12,7 +12,7 @@ License: GPL-3
 Depends: R (>= 4.0.0),
 	       microbiome,
 Imports: phyloseq, 
-	 stats, 
+	 stats,
 	 S4Vectors,
 	 BiocGenerics,
 	 vegan,

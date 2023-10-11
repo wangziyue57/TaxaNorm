@@ -16,11 +16,11 @@ TaxNorm_Model_QC <- function(TaxNormResults){
   Value <- NULL
   Phylum <- NULL
 
-  mymodelpars <- model_pars(TaxNormResults)
+  mymodelpars <- model_pars(TaxaNormResults)
 
   mycoefs <- coefficients(mymodelpars)
 
-  myinput_data <- input_data(TaxNormResults)
+  myinput_data <- input_data(TaxaNormResults)
 
   mytab <- table(tax_table(myinput_data)[, "Phylum"], exclude = NULL)
 
