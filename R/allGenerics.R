@@ -3,97 +3,97 @@
 #' @importFrom BiocGenerics duplicated
 #' @importFrom BiocGenerics as.data.frame
 
-#' @name TaxNormGenerics
-#' @title TaxNorm package generics
-#' @description TaxNorm package generics; see class man pages for associated
+#' @name TaxaNormGenerics
+#' @title TaxaNorm package generics
+#' @description TaxaNorm package generics; see class man pages for associated
 #' methods
-#' @param x TaxNorm S4 object
+#' @param x TaxaNorm S4 object
 #' @param value Replacement value
 #' @param ... Included for extendability; not currently used
 
 NULL
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("input_data", function(x, ...) standardGeneric("input_data"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("input_data<-",
            function(x, ..., value) standardGeneric("input_data<-"))
 
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("rawdata", function(x, ...) standardGeneric("rawdata"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("rawdata<-",
            function(x, ..., value) standardGeneric("rawdata<-"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("normdata", function(x, ...) standardGeneric("normdata"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("normdata<-",
            function(x, ..., value) standardGeneric("normdata<-"))
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("ecdf", function(x, ...) standardGeneric("ecdf"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("ecdf<-",
            function(x, ..., value) standardGeneric("ecdf<-"))
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("model_pars", function(x, ...) standardGeneric("model_pars"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("model_pars<-",
            function(x, ..., value) standardGeneric("model_pars<-"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("converge", function(x, ...) standardGeneric("converge"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("converge<-",
            function(x, ..., value) standardGeneric("converge<-"))
 
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("llk", function(x, ...) standardGeneric("llk"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("llk<-",
            function(x, ..., value) standardGeneric("llk<-"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("final_df", function(x, ...) standardGeneric("final_df"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("final_df<-",
            function(x, ..., value) standardGeneric("final_df<-"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("coefficients", function(x, ...) standardGeneric("coefficients"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("coefficients<-",
            function(x, ..., value) standardGeneric("coefficients<-"))
 
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("mu", function(x, ...) standardGeneric("mu"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("mu<-",
            function(x, ..., value) standardGeneric("mu<-"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("theta", function(x, ...) standardGeneric("theta"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("theta<-",
            function(x, ..., value) standardGeneric("theta<-"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("pi", function(x, ...) standardGeneric("pi"))
 
-#' @rdname TaxNormGenerics
+#' @rdname TaxaNormGenerics
 setGeneric("pi<-",
            function(x, ..., value) standardGeneric("pi<-"))

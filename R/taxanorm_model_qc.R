@@ -1,17 +1,17 @@
 #' Function to QC TaxNorm algorithm
-#' @name TaxNorm_Model_QC
-#' @param TaxNormResults  Input data; Results from TaxNorm normalization
+#' @name TaxaNorm_Model_QC
+#' @param TaxaNormResults  Input data; Results from TaxaNorm normalization
 #'
 #' @return a list containing qc taxnorm object
 #'
 #' @import phyloseq
 #' @importFrom ggplot2 ggplot geom_density scale_color_brewer labs theme_classic
 #' @examples
-#' \dontrun{TaxNorm_Model_QC(TaxNormResults = TaxNorm_Example_Output)}
+#' \dontrun{TaxaNorm_Model_QC(TaxaNormResults = TaxaNorm_Example_Output)}
 #' @export
 
 
-TaxNorm_Model_QC <- function(TaxNormResults){
+TaxaNorm_Model_QC <- function(TaxaNormResults){
 
   Value <- NULL
   Phylum <- NULL
