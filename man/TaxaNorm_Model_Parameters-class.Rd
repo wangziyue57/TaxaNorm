@@ -80,6 +80,5 @@ Parameters for TaxaNorm Method
 }}
 
 \examples{
-\dontrun{
-TaxaNorm_Model_Parameters(coefficients = coefficients,mu = mu,theta = theta,pi = pi)}
+\dontrun{TaxaNorm_Model_Parameters(coefficients = coefficients,mu = mu,theta = theta,pi = pi)}
 }

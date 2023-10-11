@@ -1,5 +1,5 @@
 Package: TaxaNorm
-Title: Feature-wise Normalization for Microbiome Sequencing Data
+Title: Feature-Wise Normalization for Microbiome Sequencing Data
 Version: 0.1
 Authors@R: c(
       person("Ziyue", "Wang", email = "wangziyue57@gmail.com", role = c("aut")),

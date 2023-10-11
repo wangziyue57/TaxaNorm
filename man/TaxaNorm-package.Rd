@@ -4,7 +4,7 @@
 \name{TaxaNorm-package}
 \alias{TaxaNorm}
 \alias{TaxaNorm-package}
-\title{TaxaNorm: Feature-wise Normalization for Microbiome Sequencing Data}
+\title{TaxaNorm: Feature-Wise Normalization for Microbiome Sequencing Data}
 \description{
 A novel feature-wise normalization method based on zero-inflated negative binomial model. This method assumes that the effects of sequencing depth vary for each taxon on their mean and also incorporates a rational link of zero probability and taxon dispersion as a function of sequencing depth.
 }
@@ -12,11 +12,12 @@ A novel feature-wise normalization method based on zero-inflated negative binomi
 Useful links:
 \itemize{
   \item \url{https://github.com/wangziyue57/TaxaNorm}
+  \item Report bugs at \url{https://github.com/wangziyue57/TaxaNorm/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Dillon Lloyd \email{dtlloyd@ncsu.edu}
+\strong{Maintainer}: Dillon Lloyd \email{dtlloyd@ncsu.edu} [copyright holder]
 
 Authors:
 \itemize{

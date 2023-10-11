@@ -20,8 +20,7 @@
 
 #' @details
 #' Parameters for TaxaNorm Method
-#' @examples \dontrun{
-#' TaxaNorm_Model_Parameters(coefficients = coefficients,mu = mu,theta = theta,pi = pi)}
+#' @examples \dontrun{TaxaNorm_Model_Parameters(coefficients = coefficients,mu = mu,theta = theta,pi = pi)}
 
 NULL
 
