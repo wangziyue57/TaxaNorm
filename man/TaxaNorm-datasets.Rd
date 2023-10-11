@@ -14,14 +14,14 @@ data(TaxaNorm_Example_Output, package = "TaxaNorm")
 Objects included in the TaxaNorm package, loaded with
 \link[utils:data]{utils::data}
 }
-\section{TaxNorm_Example_Input}{
+\section{TaxaNorm_Example_Input}{
 
 
 Example data
 #'
 }
 
-\section{TaxNorm_Example_Output}{
+\section{TaxaNorm_Example_Output}{
 
 
 Example output

@@ -81,9 +81,9 @@ TaxaNorm_Example_Output <- TaxaNorm_Normalization(data= TaxaNorm_Example_Input,
                                   random = FALSE,
                                   ncores = NULL)
 
-#save(TaxNorm_Example_Output, file = "../data/TaxNorm_Example_Output.rda")
 # run diagnosis test
 Diagnose_Data <- TaxaNorm_Run_Diagnose(Normalized_Results = TaxaNorm_Example_Output, prev = TRUE, equiv = TRUE, group = sample_data(TaxaNorm_Example_Input)$body_site)
+
 
 ```
 
@@ -119,7 +119,7 @@ Users can apply any of their customized filtering criteria as well. Alternativel
 
 ```{r, eval = FALSE}
 taxaIn <- rowSums(abundances(TaxaNorm_Example_Input)) > 10
-TaxaNorm_Example_Input <- prune_taxa(taxaIn, TaxNorm_Example_Input) 
+TaxaNorm_Example_Input <- prune_taxa(taxaIn, TaxaNorm_Example_Input) 
 ```
 
 ### QC Input Data
@@ -163,7 +163,7 @@ TaxaNorm_Model_QC(TaxaNormResults = TaxaNorm_Example_Output)
 
 ```{r, eval = FALSE}
 
-TaxaNorm_NMDS(TaxaNormResults = TaxNorm_Example_Output, group_column = "body_site")
+TaxaNorm_NMDS(TaxaNormResults = TaxaNorm_Example_Output, group_column = "body_site")
 
 ```
 
