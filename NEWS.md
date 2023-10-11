@@ -1,3 +1,5 @@
+# TaxaNorm 2.0
+
 # TaxaNorm 1.0
 
 # TaxaNorm 0.1
