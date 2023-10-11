@@ -11,6 +11,7 @@
 #'
 #' @return a TaxaNorm Object containing the normalized count values and accessory information
 #' @import phyloseq microbiome matrixStats
+#' @importFrom stats dnbinom .getXlevels model.matrix model.response model.weights nlm optim pchisq pnbinom qnorm runif terms update
 #' @examples
 #' \dontrun{Normalized_Data <- TaxaNorm_Normalization(data= TaxaNorm_Example_Input,
 #'                                          depth = NULL,

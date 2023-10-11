@@ -11,7 +11,7 @@ Description: A novel feature-wise normalization method based on zero-inflated ne
 License: GPL-3
 Depends: R (>= 4.0.0),
 	       microbiome,
-Imports: phyloseq, 
+Imports: phyloseq,
 	 stats,
 	 S4Vectors,
 	 BiocGenerics,
