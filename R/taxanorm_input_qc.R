@@ -1,18 +1,18 @@
 #' Function for TaxNorm input data
-#' @name TaxNorm_QC_Input
+#' @name TaxaNorm_QC_Input
 #' @param data (Required) Input data; should be either a phyloseq object or a count matrix
 #'
 #' @return QC PLots
 #'
 #' @importFrom ggplot2 ggplot aes geom_point geom_smooth scale_x_continuous scale_y_continuous geom_abline ggtitle theme_classic
 #' @examples
-#' \dontrun{qc_data <- TaxNorm_QC_Input(TaxNorm_Example_Input)}
+#' \dontrun{qc_data <- TaxaNorm_QC_Input(TaxaNorm_Example_Input)}
 #'
 #' @export
 
 
 
-TaxNorm_QC_Input <- function(data){
+TaxaNorm_QC_Input <- function(data){
 
   var <- NULL
   zero <- NULL

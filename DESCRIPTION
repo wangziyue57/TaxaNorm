@@ -1,4 +1,4 @@
-Package: TaxNorm
+Package: TaxaNorm
 Title: Feature-wise Normalization for Microbiome Sequencing Data
 Version: 0.1
 Authors@R: c(
@@ -25,7 +25,7 @@ Imports: phyloseq,
 	 parallelly,
 	 ggplot2,
 	 utils
-URL: https://github.com/wangziyue57/TaxNorm
+URL: https://github.com/wangziyue57/TaxaNorm
 biocViews: Sequencing, Microbiome, Metagenomics, Normalization, Visualization
 Suggests: 
     rmarkdown,

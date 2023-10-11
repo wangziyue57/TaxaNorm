@@ -1,5 +1,5 @@
-#' Function to run TaxNorm algorithm
-#' @name TaxNorm_Normalization
+#' Function to run TaxaNorm algorithm
+#' @name TaxaNorm_Normalization
 #' @param data (Required) Input data; should be either a phyloseq object or a count matrix
 #' @param depth sequencing depth if pre-calculated. It should be a vector with the same length and order as the column of the count data
 #' @param group condition variables if samples are from multiple groups; should be correpsond to the column of the count data. default is NULL, where no grouping is considered
@@ -13,9 +13,9 @@
 #' @import phyloseq microbiome matrixStats
 #' @examples
 #' \dontrun{
-#' Normalized_Data <- TaxNorm_Normalization(data= TaxNorm_Example_Input,
+#' Normalized_Data <- TaxaNorm_Normalization(data= TaxaNorm_Example_Input,
 #'                                          depth = NULL,
-#'                                          group = sample_data(TaxNorm_Example_Input)$body_site,
+#'                                          group = sample_data(TaxaNorm_Example_Input)$body_site,
 #'                                          meta.data = NULL,
 #'                                          filter.cell.num = 10,
 #'                                          filter.taxa.count = 0,
@@ -25,7 +25,7 @@
 
 #' @export
 
-TaxNorm_Normalization <- function(data, depth = NULL, group = NULL, meta.data = NULL,
+TaxaNorm_Normalization <- function(data, depth = NULL, group = NULL, meta.data = NULL,
                                   filter.cell.num = 10,
                                   filter.taxa.count = 0,
                                   random = FALSE,
@@ -125,12 +125,12 @@ TaxNorm_Normalization <- function(data, depth = NULL, group = NULL, meta.data = 
   normdata_df <- as.data.frame(normdata)
   ecdf_df <- as.data.frame(ecdf)
 
-  model_parameters <- TaxNorm_Model_Parameters(coefficients = coefficients,
+  model_parameters <- TaxaNorm_Model_Parameters(coefficients = coefficients,
                                                mu = mu, theta = theta, pi = pi)
 
   myinput <- data
 
-  myresults <- TaxNorm_Results(input_data = myinput,
+  myresults <- TaxaNorm_Results(input_data = myinput,
                                rawdata = counts_df,
                                normdata = normdata_df,
                                ecdf = ecdf_df,

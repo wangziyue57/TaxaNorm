@@ -10,38 +10,38 @@
 NULL
 
 ##----------------------------------------------------------------------------##
-## TaxNorm_Model_Parameters
+## TaxaNorm_Model_Parameters
 
-#' @rdname TaxNorm_Model_Parameters-class
-#' @exportClass TaxNorm_Model_Parameters
+#' @rdname TaxaNorm_Model_Parameters-class
+#' @exportClass TaxaNorm_Model_Parameters
 
-setClass("TaxNorm_Model_Parameters",
+setClass("TaxaNorm_Model_Parameters",
          slots = c(coefficients = "matrix",
                    mu = "matrix",
                    theta = "matrix",
                    pi ="matrix"))
 
-setClassUnion("TaxNorm_Model_Parameters_OR_NULL", members = c("TaxNorm_Model_Parameters", "NULL"))
+setClassUnion("TaxaNorm_Model_Parameters_OR_NULL", members = c("TaxaNorm_Model_Parameters", "NULL"))
 
 ##----------------------------------------------------------------------------##
 ##----------------------------------------------------------------------------##
 
-## TaxNorm_Results
+## TaxaNorm_Results
 
-#' @rdname TaxNorm_Results-class
-#' @exportClass TaxNorm_Results
+#' @rdname TaxaNorm_Results-class
+#' @exportClass TaxaNorm_Results
 
-setClass("TaxNorm_Results",
+setClass("TaxaNorm_Results",
          slots = c(input_data = "ANY",
                    rawdata = "data.frame",
                    normdata = "data.frame",
                    ecdf = "data.frame",
-                   model_pars ="TaxNorm_Model_Parameters",
+                   model_pars ="TaxaNorm_Model_Parameters",
                    converge = "logical",
                    llk = "ANY",
                    final_df = "ANY"))
 
-setClassUnion("TaxNorm_Results_OR_NULL", members = c("TaxNorm_Results", "NULL"))
+setClassUnion("TaxaNorm_Results_OR_NULL", members = c("TaxaNorm_Results", "NULL"))
 
 ##----------------------------------------------------------------------------##
 ##----------------------------------------------------------------------------##
