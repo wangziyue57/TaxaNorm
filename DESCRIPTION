@@ -3,7 +3,7 @@ Title: Feature-wise Normalization for Microbiome Sequencing Data
 Version: 0.1
 Authors@R: c(
       person("Ziyue", "Wang", email = "wangziyue57@gmail.com", role = c("aut")),
-      person("Dillon", "Lloyd", email = "dtlloyd@ncsu.edu", role = c("aut","cre")),
+      person("Dillon", "Lloyd", email = "dtlloyd@ncsu.edu", role = c("aut","cre","cph")),
       person("Shanshan", "Zhao", email = "shanshan.zhao@nih.gov", role = c("aut","ctb")),
       person("Alison", "Motsinger-Reif", email = "alison.motsinger-reif@nih.gov", role = c("aut","ctb")))
 Maintainer: Dillon Lloyd <dtlloyd@ncsu.edu>
@@ -34,3 +34,4 @@ VignetteBuilder: knitr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
+BugReports: https://github.com/wangziyue57/TaxaNorm/issues
