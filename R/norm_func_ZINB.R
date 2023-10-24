@@ -13,7 +13,7 @@
 #' @import phyloseq microbiome matrixStats
 #' @importFrom stats dnbinom .getXlevels model.matrix model.response model.weights nlm optim pchisq pnbinom qnorm runif terms update
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' data("TaxaNorm_Example_Input", package = "TaxaNorm")
 #' Normalized_Data <- TaxaNorm_Normalization(data= TaxaNorm_Example_Input,
 #'                                          depth = NULL,
