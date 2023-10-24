@@ -6,7 +6,8 @@
 #'
 #' @importFrom ggplot2 ggplot aes geom_point geom_smooth scale_x_continuous scale_y_continuous geom_abline ggtitle theme_classic
 #' @examples
-#' \dontrun{qc_data <- TaxaNorm_QC_Input(TaxaNorm_Example_Input)}
+#' data("TaxaNorm_Example_Input", package = "TaxaNorm")
+#' qc_data <- TaxaNorm_QC_Input(TaxaNorm_Example_Input)
 #'
 #' @export
 
