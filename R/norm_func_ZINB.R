@@ -13,14 +13,16 @@
 #' @import phyloseq microbiome matrixStats
 #' @importFrom stats dnbinom .getXlevels model.matrix model.response model.weights nlm optim pchisq pnbinom qnorm runif terms update
 #' @examples
-#' \dontrun{Normalized_Data <- TaxaNorm_Normalization(data= TaxaNorm_Example_Input,
+#' \dontrun{
+#' data("TaxaNorm_Example_Input", package = "TaxaNorm")
+#' Normalized_Data <- TaxaNorm_Normalization(data= TaxaNorm_Example_Input,
 #'                                          depth = NULL,
 #'                                          group = sample_data(TaxaNorm_Example_Input)$body_site,
 #'                                          meta.data = NULL,
 #'                                          filter.cell.num = 10,
 #'                                          filter.taxa.count = 0,
 #'                                          random = FALSE,
-#'                                          ncores = NULL)}
+#'                                          ncores = 1)}
 
 
 #' @export
@@ -489,7 +491,7 @@ zinb.reg <- function (formula, data, subset, na.action, weights, offset,
   }
 
   if (control$trace) {
-    cat("dependent variable:\n")
+    message("dependent variable:\n")
     tab <- table(Y)
     names(dimnames(tab)) <- NULL
     print(tab)
@@ -581,7 +583,7 @@ zinb.reg <- function (formula, data, subset, na.action, weights, offset,
 
   if (is.null(start)) {
     if (control$trace) {
-      cat("generating starting values...\n")
+      message("generating starting values...\n")
     }
 
     # fit built-in function
@@ -603,7 +605,7 @@ zinb.reg <- function (formula, data, subset, na.action, weights, offset,
 
   if (control$EM) {
 
-    if (control$trace) {cat("EM estimation:\n")}
+    if (control$trace) {message("EM estimation:\n")}
 
     w0 <- exp(Z %*% start$zero + offsetz) / (1+exp(Z %*% start$zero + offsetz))
     w0[Y != 0] <- 0
@@ -613,7 +615,7 @@ zinb.reg <- function (formula, data, subset, na.action, weights, offset,
     nIter <- 0
     while (TRUE) {
       if (control$trace) {
-        cat(Q0, '\n')
+        message(Q0, '\n')
       }
       nIter <- nIter + 1
 
@@ -652,7 +654,7 @@ zinb.reg <- function (formula, data, subset, na.action, weights, offset,
   }
 
   if (control$trace) {
-    cat('Finished!\n')
+    message('Finished!\n')
   }
 
   # summarize...
@@ -800,7 +802,7 @@ nb.reg <- function (formula, data, subset, na.action, weights, offset,
   }
 
   if (control$trace) {
-    cat("dependent variable:\n")
+    message("dependent variable:\n")
     tab <- table(Y)
     names(dimnames(tab)) <- NULL
     print(tab)
@@ -872,7 +874,7 @@ nb.reg <- function (formula, data, subset, na.action, weights, offset,
 
   if (is.null(start)) {
     if (control$trace) {
-      cat("generating starting values...\n")
+      message("generating starting values...\n")
     }
     # offset confusion, to circumvent, we use it as a covariate
     # Supply a different starting point
@@ -883,7 +885,7 @@ nb.reg <- function (formula, data, subset, na.action, weights, offset,
 
   }
   if (control$trace) {
-    cat("begin model fitting...\n")
+    message("begin model fitting...\n")
   }
   mu.ind <- 1 : kx
   theta.ind <- (kx + 1) : (kx + km)
@@ -905,9 +907,9 @@ nb.reg <- function (formula, data, subset, na.action, weights, offset,
   }
   if (control$trace) {
     if (fit$converged) {
-      cat("model converged...\n")
+      message("model converged...\n")
     } else {
-      cat("model not converged...\n")
+      message("model not converged...\n")
     }
 
   }

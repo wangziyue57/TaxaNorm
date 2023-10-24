@@ -18,6 +18,7 @@ NMDS Plot
 Function for TaxNorm NMDS
 }
 \examples{
-\dontrun{TaxaNorm_NMDS(TaxaNorm_Example_Output, group_column = "body_site")}
+\donttest{data("TaxaNorm_Example_Output", package = "TaxaNorm")
+TaxaNorm_NMDS(TaxaNorm_Example_Output, group_column = "body_site")}
 
 }

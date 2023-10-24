@@ -10,6 +10,7 @@
 #' @param x TaxaNorm S4 object
 #' @param value Replacement value
 #' @param ... Included for extendability; not currently used
+#' @return TaxaNorm generic functions return the specified slot of the TaxaNorm object given to the function
 
 NULL
 

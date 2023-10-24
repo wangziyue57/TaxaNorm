@@ -140,12 +140,25 @@ All results from the TaxaNorm method and what was used to get those results
 }}
 
 \examples{
-\dontrun{TaxaNormResults(input_data = input_data,
+coefficients <-  matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+mu <- matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+theta <-  matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+pi <- matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+model_pars <- TaxaNorm_Model_Parameters(coefficients = coefficients,mu = mu,theta = theta,pi = pi)
+data("TaxaNorm_Example_Input", package = "TaxaNorm")
+rawdata <- data.frame(Taxa1 = c(1,2,3),Taxa2 = c(3,4,5),Taxa3 = c(6,7,8))
+normdata <- data.frame(Taxa1 = c(-1.4,-1.09,-0.73),
+Taxa2 = c( -0.36,0,0.36), Taxa3 = c(0.73,1.09,1.46))
+ecdf <- data.frame(0.05,0.23,0.89)
+converge <- c(TRUE,TRUE,FALSE)
+llk <- c(1,1.5,0.5)
+final_df <- data.frame(Taxa1 = c(1,2,3),Taxa2 = c(3,4,5),Taxa3 = c(6,7,8))
+TaxaNorm_Results(input_data = TaxaNorm_Example_Input,
                                   rawdata = rawdata,
                                    normdata = normdata,
                                    ecdf = ecdf,
                                    model_pars = model_pars,
                                    converge = converge,
                                    llk = llk,
-                                   final_df = final_df)}
+                                   final_df = final_df)
 }

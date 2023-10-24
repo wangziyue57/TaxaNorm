@@ -79,7 +79,7 @@ TaxaNorm_Example_Output <- TaxaNorm_Normalization(data= TaxaNorm_Example_Input,
                                   filter.cell.num = 10,
                                   filter.taxa.count = 0,
                                   random = FALSE,
-                                  ncores = NULL)
+                                  ncores = 1)
 
 # run diagnosis test
 Diagnose_Data <- TaxaNorm_Run_Diagnose(Normalized_Results = TaxaNorm_Example_Output, prev = TRUE, equiv = TRUE, group = sample_data(TaxaNorm_Example_Input)$body_site)
@@ -159,7 +159,6 @@ TaxaNorm_Model_QC(TaxaNormResults = TaxaNorm_Example_Output)
 
 
 ### TaxNorm NMDS
-# Not running currently 
 
 ```{r, eval = FALSE}
 

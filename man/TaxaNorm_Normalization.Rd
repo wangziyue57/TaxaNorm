@@ -39,12 +39,14 @@ a TaxaNorm Object containing the normalized count values and accessory informati
 Function to run TaxaNorm algorithm
 }
 \examples{
-\dontrun{Normalized_Data <- TaxaNorm_Normalization(data= TaxaNorm_Example_Input,
+\dontrun{
+data("TaxaNorm_Example_Input", package = "TaxaNorm")
+Normalized_Data <- TaxaNorm_Normalization(data= TaxaNorm_Example_Input,
                                          depth = NULL,
                                          group = sample_data(TaxaNorm_Example_Input)$body_site,
                                          meta.data = NULL,
                                          filter.cell.num = 10,
                                          filter.taxa.count = 0,
                                          random = FALSE,
-                                         ncores = NULL)}
+                                         ncores = 1)}
 }

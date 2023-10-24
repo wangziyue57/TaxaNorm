@@ -16,5 +16,6 @@ a list containing qc taxnorm object
 Function to QC TaxNorm algorithm
 }
 \examples{
-\dontrun{TaxaNorm_Model_QC(TaxaNormResults = TaxaNorm_Example_Output)}
+data("TaxaNorm_Example_Output", package = "TaxaNorm")
+TaxaNorm_Model_QC(TaxaNormResults = TaxaNorm_Example_Output)
 }

@@ -7,7 +7,8 @@
 #' @importFrom vegan vegdist metaMDS
 #' @importFrom ggplot2 ggplot stat_ellipse aes_string theme_classic
 #' @examples
-#' \dontrun{TaxaNorm_NMDS(TaxaNorm_Example_Output, group_column = "body_site")}
+#' \donttest{data("TaxaNorm_Example_Output", package = "TaxaNorm")
+#' TaxaNorm_NMDS(TaxaNorm_Example_Output, group_column = "body_site")}
 #'
 #' @export
 

@@ -7,7 +7,9 @@
 #' @return a list containing the normalized count values
 #' @import phyloseq microbiome matrixStats
 #' @examples
-#' \dontrun{Diagnose_Data <- TaxaNorm_Run_Diagnose(Normalized_Results = Normalized_Data,
+#' \donttest{data("TaxaNorm_Example_Input", package = "TaxaNorm")
+#' data("TaxaNorm_Example_Output", package = "TaxaNorm")
+#' Diagnose_Data <- TaxaNorm_Run_Diagnose(Normalized_Results = TaxaNorm_Example_Output,
 #'                                         prev = TRUE,
 #'                                         equiv = TRUE,
 #'                                         group = sample_data(TaxaNorm_Example_Input)$body_site)}

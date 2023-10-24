@@ -20,7 +20,12 @@
 
 #' @details
 #' Parameters for TaxaNorm Method
-#' @examples \dontrun{TaxaNorm_Model_Parameters(coefficients = coefficients,mu = mu,theta = theta,pi = pi)}
+#' @examples
+#' coefficients <-  matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+#' mu <- matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+#' theta <-  matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+#' pi <- matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+#' TaxaNorm_Model_Parameters(coefficients = coefficients,mu = mu,theta = theta,pi = pi)
 
 NULL
 

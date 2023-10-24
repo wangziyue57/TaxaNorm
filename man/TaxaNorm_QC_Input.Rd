@@ -16,6 +16,7 @@ QC PLots
 Function for TaxNorm input data
 }
 \examples{
-\dontrun{qc_data <- TaxaNorm_QC_Input(TaxaNorm_Example_Input)}
+data("TaxaNorm_Example_Input", package = "TaxaNorm")
+qc_data <- TaxaNorm_QC_Input(TaxaNorm_Example_Input)
 
 }

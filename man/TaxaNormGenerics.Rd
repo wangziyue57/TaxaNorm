@@ -83,6 +83,9 @@ pi(x, ...) <- value
 
 \item{value}{Replacement value}
 }
+\value{
+TaxaNorm generic functions return the specified slot of the TaxaNorm object given to the function
+}
 \description{
 TaxaNorm package generics; see class man pages for associated
 methods
