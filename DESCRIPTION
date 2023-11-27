@@ -7,7 +7,7 @@ Authors@R: c(
       person("Shanshan", "Zhao", email = "shanshan.zhao@nih.gov", role = c("aut","ctb")),
       person("Alison", "Motsinger-Reif", email = "alison.motsinger-reif@nih.gov", role = c("aut","ctb")))
 Maintainer: Dillon Lloyd <dtlloyd@ncsu.edu>
-Description: A novel feature-wise normalization method based on zero-inflated negative binomial model. This method assumes that the effects of sequencing depth vary for each taxon on their mean and also incorporates a rational link of zero probability and taxon dispersion as a function of sequencing depth.
+Description: A novel feature-wise normalization method based on a zero-inflated negative binomial model. This method assumes that the effects of sequencing depth vary for each taxon on their mean and also incorporates a rational link of zero probability and taxon dispersion as a function of sequencing depth. Ziyue Wang, Dillon Lloyd, Shanshan Zhao, Alison Motsinger-Reif (2023) <arXiv:https://www.biorxiv.org/content/10.1101/2023.10.31.563648v1.abstract>.
 License: GPL-3
 Depends: R (>= 4.0.0),
 	       microbiome,

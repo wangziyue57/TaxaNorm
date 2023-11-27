@@ -24,7 +24,7 @@ NULL
 #' Example output
 #'
 #' @examples
-#' \dontrun{data(TaxaNorm_Example_Input, package = "TaxaNorm")
+#' \donttest{data(TaxaNorm_Example_Input, package = "TaxaNorm")
 #'           data(TaxaNorm_Example_Output, package = "TaxaNorm")}
 #'
 #' @importFrom utils data

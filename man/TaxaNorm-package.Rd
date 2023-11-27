@@ -6,7 +6,7 @@
 \alias{TaxaNorm-package}
 \title{TaxaNorm: Feature-Wise Normalization for Microbiome Sequencing Data}
 \description{
-A novel feature-wise normalization method based on zero-inflated negative binomial model. This method assumes that the effects of sequencing depth vary for each taxon on their mean and also incorporates a rational link of zero probability and taxon dispersion as a function of sequencing depth.
+A novel feature-wise normalization method based on a zero-inflated negative binomial model. This method assumes that the effects of sequencing depth vary for each taxon on their mean and also incorporates a rational link of zero probability and taxon dispersion as a function of sequencing depth. Ziyue Wang, Dillon Lloyd, Shanshan Zhao, Alison Motsinger-Reif (2023) <arXiv:https://www.biorxiv.org/content/10.1101/2023.10.31.563648v1.abstract>.
 }
 \seealso{
 Useful links:
