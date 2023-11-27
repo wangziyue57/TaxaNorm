@@ -39,7 +39,7 @@ a TaxaNorm Object containing the normalized count values and accessory informati
 Function to run TaxaNorm algorithm
 }
 \examples{
-\dontrun{
+\donttest{
 data("TaxaNorm_Example_Input", package = "TaxaNorm")
 Normalized_Data <- TaxaNorm_Normalization(data= TaxaNorm_Example_Input,
                                          depth = NULL,
