@@ -22,3 +22,4 @@ remotes::install_github("wangziyue57/TaxaNorm",
 
 
 ## Citation
+Please cite our original paper: Wang Z, Lloyd D, Zhao S, Motsinger-Reif A. Taxanorm: a novel taxa-specific normalization approach for microbiome data. BMC bioinformatics. 2024 Sep 16;25(1):304.
